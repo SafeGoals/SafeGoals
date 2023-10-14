@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+    }
+    
+    form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+#submit-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <form >
+    <h2>Bet on Goals</h2>
+    <label for="location">Company:</label>
+    <select id="location">
+      <option value="sportybet">Sportybet</option>
+      <option value="msport">MSport</option>
+      <option value="22bet">22Bet</option>
+    </select>
+    <br>
+
+    <label for="goals">Goals:</label>
+    <select id="goals">
+      <option value="over0.5">Over 0.5</option>
+      <option value="over1.5">Over 1.5</option>
+      <option value="over2.5">Over 2.5</option>
+      <option value="over3.5">Over 3.5</option>
+      <option value="under0.5">Under 0.5</option>
+      <option value="under1.5">Under 1.5</option>
+      <option value="under2.5">Under 2.5</option>
+      <option value="under3.5">Under 3.5</option>
+    </select>
+    <br>
+
+    <label for="date">Date:</label>
+    <select id="date">
+      <!-- JavaScript can be used to dynamically generate date options -->
+    </select>
+    <br>
+
+    <label for="leagues">Leagues:</label>
+    <select id="leagues" multiple>
+      <option value="epl">EPL</option>
+      <option value="laliga">La Liga</option>
+      <option value="seriea">Serie A</option>
+    </select>
+    <br>
+
+    <label for="table-location">Table position (Optional):</label>
+    <input type="number" id="table-location" max="30">
+    <br>
+
+    <button id="submit-button" style="background-color: red;" onclick="displayMessage()">Generate code</button>
+  
+</form>
+</div>
+
+
+<hr>
+
+<div class="container">
+  <form >
+    <h2>Bet on corners</h2>
+    <label for="location">Company:</label>
+    <select id="location">
+      <option value="sportybet">Sportybet</option>
+      <option value="msport">MSport</option>
+      <option value="22bet">22Bet</option>
+    </select>
+    <br>
+
+    <label for="goals">Corners:</label>
+    <select id="goals">
+      <option value="over0.5">Over 6.5</option>
+      <option value="over1.5">Over 7.5</option>
+      <option value="over2.5">Over 9.5</option>
+      <option value="over3.5">Over 11.5</option>
+      <option value="under0.5">Under 6.5</option>
+      <option value="under1.5">Under 7.5</option>
+      <option value="under2.5">Under 9.5</option>
+      <option value="under3.5">Under 11.5</option>
+    </select>
+    <br>
+
+    <label for="date">Date:</label>
+    <select id="date">
+      <!-- JavaScript can be used to dynamically generate date options -->
+    </select>
+    <br>
+
+    <label for="leagues">Leagues:</label>
+    <select id="leagues" multiple>
+      <option value="epl">EPL</option>
+      <option value="laliga">La Liga</option>
+      <option value="seriea">Serie A</option>
+    </select>
+    <br>
+
+    <label for="table-location">Table position (Optional):</label>
+    <input type="number" id="table-location" max="30">
+    <br>
+
+    <button id="submit-button" style="background-color: red;" onclick="displayMessage()">Generate code</button>
+  </div>
+</form>
+  <script>
+    function displayMessage() {
+      alert("Server not connected");
+    }
+    
+    function displayMessage() {
+  alert("Server not connected");
+}
+
+function generateDateOptions() {
+  var dateSelect = document.getElementById("date");
+
+  var today = new Date();
+  for (var i = 0; i < 10; i++) {
+    var option = document.createElement("option");
+    option.value = today.toISOString().split('T')[0];
+    option.text = today.toDateString();
+    dateSelect.appendChild(option);
+
+    today.setDate(today.getDate() + 1); // Move to the next day
+  }
+}
+
+generateDateOptions(); // Call the function to generate date options
+
+    
+  </script>
+</body>
+</html>
 
