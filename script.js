@@ -22,7 +22,7 @@
 
             if (homePercentage > 50) {
                 checkbox1.checked = true;
-                if (homePercentage > 60 && homePercentage <= 70) {
+                if (homePercentage > 60) {
                     checkbox2.checked = true;
                 } else {
                     checkbox2.checked = false;
@@ -36,7 +36,7 @@
 
             if (awayPercentage > 50) {
                 checkbox1.checked = true;
-                if (awayPercentage > 60 && awayPercentage <= 70) {
+                if (awayPercentage > 60) {
                     checkbox2.checked = true;
                 } else {
                     checkbox2.checked = false;
@@ -48,6 +48,7 @@
         }
     });
 });
+
 //stake
 
 function displayMessage() {
