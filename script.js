@@ -48,5 +48,30 @@
         }
     });
 });
+//stake
+
+function displayMessage() {
+      alert("Server not connected");
+    }
+
+      function displayMessage() {
+  alert("Server not connected");
+}
+
+function generateDateOptions() {
+  var dateSelect = document.getElementById("date");
+
+  var today = new Date();
+  for (var i = 0; i < 10; i++) {
+    var option = document.createElement("option");
+    option.value = today.toISOString().split('T')[0];
+    option.text = today.toDateString();
+    dateSelect.appendChild(option);
+
+    today.setDate(today.getDate() + 1); // Move to the next day
+  }
+}
+
+generateDateOptions(); // Call the function to generate date options
 
     
