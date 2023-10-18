@@ -2,77 +2,11 @@
 <html>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <title>Match Predictor</title>
 
 <head>
-  <style>
-    
-
-      * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: white;
-    font-family: Arial, sans-serif;
-}
-
-
-form {
-    margin-top: 20px;
-    padding: 20px;
-      margin: 0px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="number"], select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-input[type="text"], select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-
-#submit-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-
-
-/* Add media queries for responsive design */
-@media screen and (max-width: 768px) {
-    #menu-button {
-        display: block;
-    }
-
-    #menu-list {
-        display: none;
-    }
-
-    #menu-list.active {
-        display: block;
-    }
-    .body{text-align:center ;}
-}
-
-
-
-  </style>
+  
 </head>
 <body>
   <div class="container">
@@ -170,31 +104,8 @@ input[type="text"], select {
     <button id="submit-button" style="background-color: red;" onclick="displayMessage()">Generate code</button>
   </div>
 </form>
-  <script>
-    function displayMessage() {
-      alert("Server not connected");
-    }
-
-      function displayMessage() {
-  alert("Server not connected");
-}
-
-function generateDateOptions() {
-  var dateSelect = document.getElementById("date");
-
-  var today = new Date();
-  for (var i = 0; i < 10; i++) {
-    var option = document.createElement("option");
-    option.value = today.toISOString().split('T')[0];
-    option.text = today.toDateString();
-    dateSelect.appendChild(option);
-
-    today.setDate(today.getDate() + 1); // Move to the next day
-  }
-}
-
-generateDateOptions(); // Call the function to generate date options
-
+  <script src="script.js" type="javascript">
+    
   </script>
 </body>
 </html>
