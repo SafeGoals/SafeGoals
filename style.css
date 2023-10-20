@@ -16,6 +16,9 @@ body {
     color: white;
     padding: 10px;
 }
+#form-container {
+    display: none;
+}
 
 .analysis{
     max-width: 800px;
