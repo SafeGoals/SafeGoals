@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Match Predictor</title>
 </head>
-
 <body>
     <nav class="navbar">
         <button id="menu-button">Menu</button>
@@ -17,14 +15,7 @@
         </ul>
     </nav>
     <div class="content">
-        <div class="content">
-    
-        <h2 id="toggle-form">Forecast Team goals</h2>
-        
-            
-            <!-- Your form content here -->
-        
-    
+        <h2>Predict the Match</h2>
         <form id="match-predictor">
             <label for="side">Side:</label>
             <select id="side" name="side">
@@ -34,6 +25,47 @@
             <label for="winner-last-5">Club name:</label>
             <input type="text" id="club-name" name="club-name">
             
+            <label for="winner-h2h">H2H Home Goals:</label>
+            <input type="number" id="HG" name="numericInput" step="1" pattern="[0-9]*" required>
+            <label for="winner-last-5">H2H away goals:</label>
+            <input type="number" id="HA" name="numericInput" step="1" pattern="[0-9]*" required>
+            <label for="winner-last-5">TGS prev 5:</label>
+            <input type="number" id="numericInput" name="numericInput" step="1" pattern="[0-9]*" required>
+            <label for="Team-form">Team Form :</label>
+            <input type="number" id="numericInput" name="numericInput" step="1" pattern="[0-9]*" required>
+            
+            
+            <button type="button" id="submit-button">Predict</button>
+        </form>
+    </div>
+    
+    
+    <hr>
+    
+    <div class="analysis">
+        <h2>Results</h2>
+        
+        <label>GSP:</label><i id="gsp"></i><br />
+        <label for="checkbox1">Over 0.5</label>
+    <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+    <br>
+
+    <label for="checkbox2">Over 1.5</label>
+    <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+    <br>
+
+    <label for="checkbox3">Over 2.5</label>
+    <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+    <br>
+    </div>
+    
+    <script src="script.js">
+        
+        
+    </script>
+</body>
+</html>
+
             <label for="winner-h2h">H2H Home Goals:</label>
             <input type="number" id="HG" name="numericInput" step="1" pattern="[0-9]*" required>
             <label for="winner-last-5">H2H away goals:</label>
