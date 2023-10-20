@@ -55,6 +55,9 @@ display: inline-block ;
     display: inline;
     margin-right: 20px;
 }
+#menu-list a{
+   color:white:
+}
 
 .content {
     max-width: 100%;
