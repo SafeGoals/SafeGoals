@@ -1,5 +1,20 @@
+//drop-down for h2tags
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-form");
+    const formContainer = document.getElementById("form-container");
 
-        
+    toggleButton.addEventListener("click", function () {
+        if (formContainer.style.display === "none" || formContainer.style.display === "") {
+            formContainer.style.display = "block";
+        } else {
+            formContainer.style.display = "none";
+        }
+    });
+
+    // Rest of your JavaScript code here
+});
+
+     // bet properties function
         document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById("submit-button");
     const HGInput = document.getElementById("HG");
