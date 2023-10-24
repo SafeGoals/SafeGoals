@@ -88,6 +88,17 @@ function generateDateOptions() {
   }
 }
 
+//dialogue
+
+       function showDialog() {
+            const dialog = document.getElementById("info-dialog");
+            
+            if (dialog.style.display === "none" || dialog.style.display === "") {
+                dialog.style.display = "block";
+            } else {
+                dialog.style.display = "none";
+            }
+       }
 generateDateOptions(); // Call the function to generate date options
 
     
