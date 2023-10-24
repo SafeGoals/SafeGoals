@@ -29,9 +29,9 @@
             <label for="winner-h2h">H2H Home Goals:</label>
             <input type="number" id="HG" name="numericInput" step="1" pattern="[0-9]*" required>
             <label for="winner-last-5">H2H away goals:</label>
-            <input type="number" id="HA" name="numericInput" step="1" pattern="[0-9]*" required>
+            <input type="number" id="HA" name="numericInput" step="1" placeholder="number of h2h goals away"pattern="[0-9]*" required>
             <label for="winner-last-5">TGS prev 5:</label>
-            <input type="number" id="numericInput" name="numericInput" step="1" pattern="[0-9]*" required>
+            <input type="number" id="numericInput"placeholder="Total goals scored in prev 5 matches"  name="numericInput" step="1" pattern="[0-9]*" required>
             <label for="Team-form">Team Form :</label>
             <input type="number" id="numericInput" name="numericInput" step="1" pattern="[0-9]*" required>
             
@@ -39,9 +39,6 @@
             <button type="button" id="submit-button">Predict</button>
         </form>
     </div>
-    
-    
-
     
     <div class="analysis">
         <h2>Results</h2>
@@ -110,7 +107,7 @@
     <input type="number" id="table-location" max="30">
     <br>
 
-    <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button>
+    <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button>   <input type="text" id="table-location" placeholder="bet code" max="30">
   
 </form>
 </div>
@@ -160,7 +157,7 @@
     <input type="number" id="table-location" max="30">
     <br>
 
-    <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button>
+    <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button><input type="text" id="table-location" placeholder="bet code" max="30">
   </div>
 </form>
  
