@@ -105,7 +105,20 @@ input[type="text"], select {
     cursor: pointer;
 }
 
-
+/* dialogue box*/
+  .info-icon {
+        font-size: 10px;
+        cursor: pointer;
+    }
+    .dialog-box {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
 
 /* Add media queries for responsive design */
 @media screen and (min-width: 768px) {
