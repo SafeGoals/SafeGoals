@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-    background-color: red;
+    background-color: green;
     color: white;
     padding: 10px;
 }
@@ -24,7 +24,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px;
-    color:red;
+    color:green;
 }
 
 .analysis label{
@@ -67,7 +67,7 @@ display: inline-block ;
 
 
 h2 {
-    color: red;
+    color: green;
 }
 
 form {
@@ -98,7 +98,7 @@ input[type="text"], select {
 
 
 #submit-button {
-    background-color: red;
+    background-color: green;
     color: white;
     border: none;
     padding: 10px 20px;
