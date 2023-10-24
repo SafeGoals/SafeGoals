@@ -46,7 +46,12 @@
     <div class="analysis">
         <h2>Results</h2>
         
-        <label>GSP:</label><i id="gsp"></i><br />
+        <label>GSP</label><span class="info-icon" onclick="showDialog()">ℹ️:</span>
+    
+    <div class="dialog-box" id="info-dialog">
+        <!-- Content for the dialogue box -->
+        <p>displays the goal scoring possibility of the selected side in the game expressed in percentage  .</p>
+    </div> <i id="gsp"></i><br />
         <label for="checkbox1">Over 0.5</label>
     <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
     <br>
