@@ -109,8 +109,9 @@ input[type="text"], select {
 
 /* dialogue box*/
   .info-icon {
-        font-size: 15px;
+        font-size: 13px;
         cursor: pointer;
+        background:green;
     }
     .dialog-box {
         display: none;
