@@ -111,7 +111,7 @@ input[type="text"], select {
   .info-icon {
         font-size: 13px;
         cursor: pointer;
-        background:green;
+        
     }
     .dialog-box {
         display: none;
