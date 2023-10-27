@@ -40,7 +40,18 @@ display: inline-block ;
     text-decoration:underline ;
 }
 
-
+/*image slider*/
+.slide img{
+            width: 200px;
+            height: 200px;
+            background-color: #444;
+            margin-right: 20px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+}
 
 #menu-button {
     background-color: transparent;
