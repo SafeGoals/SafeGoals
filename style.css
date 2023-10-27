@@ -52,6 +52,18 @@ display: inline-block ;
             align-items: center;
             
 }
+.slider-container {
+            width: 100%;
+            overflow: hidden;
+            
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            transform: translateX(0);
+        }
+/*end*/
 
 #menu-button {
     background-color: transparent;
