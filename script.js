@@ -102,3 +102,20 @@ function generateDateOptions() {
 generateDateOptions(); // Call the function to generate date options
 
     
+// reset code
+window.onload = function() {
+    // Get the form element by its ID
+    var form = document.getElementById('FormId'); // Replace 'yourFormId' with your actual form's ID
+
+    // Check if the form element exists
+    if (form) {
+        // Reset the form to clear its input fields
+        form.reset();
+    }
+}
+
+
+
+
+
+                    
