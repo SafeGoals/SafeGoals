@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
    <link rel="icon" href="gojo.jpg" type="image">
-    <title>Match Predictor</title>
-</head>
 <style>
-    form{ margin:20px;}
-    .sm img{
-    width:60%;
-    height:70%;
-}
+    .form-container {
+        display: none;
+    }
+    td {
+        padding: 20px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
 
-    .mi{
-        width:200px;
-        height: 250px;
+    .highlight {
+        background-color: green;
     }
 </style>
+</head>
 <body>
-    <nav class="navbar">
+<nav class="navbar">
     <marquee direction="left"> 
      🏆🏆 Welcome to The_weakend Algorithm 🤖🤖🖥️🖥️🏆🏆
         </marquee>
     </nav>
-    
-    
-    <div class="content">
+    <table>
+        <tr>
+            <td onclick="showForm('column1-form', this)">Selection predicts</td>
+            <td onclick="showForm('column2-form', this)">Generate goal slips</td>
+            <td onclick="showForm('column3-form', this)">Generate corner slips</td>
+        </tr>
+    </table>
+
+    <div class="form-container" id="column1-form">
+        <!-- Form content for Column 1 -->
         <h2>Estimate goals for a selection</h2>
         <form id="match-predictor">
             <label for="side">Select Side:</label>
@@ -49,10 +56,7 @@
             
             
             <button type="button" id="submit-button">Predict</button>
-        </form>
-    </div>
-    
-    <div class="analysis">
+            <div class="analysis">
         <h2>Results</h2>
         
         <label>GSP <span class="info-icon" onclick="showDialog()">ℹ️:</span></label>
@@ -73,12 +77,14 @@
     <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
     <br>
     </div>
-    
-    <hr>
-    
-  <div class="container">
-  
-  <form >
+            
+            
+        </form>
+    </div>
+
+    <div class="form-container" id="column2-form">
+        <!-- Form content for Column 2 -->
+        <form >
     <h2>Bet on Goals</h2>
     <label for="location">Company:</label>
     <select id="location">
@@ -122,13 +128,11 @@
     <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button>   <input type="text" id="table-location" placeholder="bet code" max="30">
   
 </form>
-</div>
+    </div>
 
-
-<hr>
-
-<div class="container">
-  <form >
+    <div class="form-container" id="column3-form">
+        <!-- Form content for Column 3 -->
+        <form >
     <h2>Bet on corners</h2>
     <label for="location">Company:</label>
     <select id="location">
@@ -172,10 +176,27 @@
     <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button><input type="text" id="table-location" placeholder="bet code" max="30">
   </div>
 </form>
- 
-    <script src="script.js">
-        
-        
+    </div>
+
+    <script>
+        var highlightedColumn = null;
+
+        document.getElementById('column1-form').style.display = 'block';
+
+        function showForm(formId, clickedColumn) {
+            var forms = document.getElementsByClassName('form-container');
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+
+            if (highlightedColumn) {
+                highlightedColumn.classList.remove('highlight');
+            }
+
+            document.getElementById(formId).style.display = 'block';
+            clickedColumn.classList.add('highlight');
+            highlightedColumn = clickedColumn;
+        }
     </script>
 </body>
 </html>
