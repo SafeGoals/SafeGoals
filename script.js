@@ -115,7 +115,25 @@ window.onload = function() {
 }
 
 
+//onclick displays for columns
+var highlightedColumn = null;
 
+        document.getElementById('column1-form').style.display = 'block';
+
+        function showForm(formId, clickedColumn) {
+            var forms = document.getElementsByClassName('form-container');
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+
+            if (highlightedColumn) {
+                highlightedColumn.classList.remove('highlight');
+            }
+
+            document.getElementById(formId).style.display = 'block';
+            clickedColumn.classList.add('highlight');
+            highlightedColumn = clickedColumn;
+        }
 
 
                     
