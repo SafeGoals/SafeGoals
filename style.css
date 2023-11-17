@@ -13,7 +13,7 @@ body {
 }
 
 .navbar {
-    background-color: deepskyblue;
+    background-color: blue;
     color: white;
     padding: 10px;
 }
@@ -124,8 +124,8 @@ input[type="text"], select {
 
 
 #submit-button {
-    background-color: deepskyblue;
-    color: white;
+    background-color: blue;
+    color: black;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
