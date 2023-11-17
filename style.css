@@ -8,7 +8,7 @@
 
 body {
     background-color: black;
-   
+   color:white;
     font-family: courier;
 }
 
@@ -124,7 +124,7 @@ input[type="text"], select {
 
 #submit-button {
     background-color: blue;
-    color: black;
+    color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
