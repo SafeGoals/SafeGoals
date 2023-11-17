@@ -7,8 +7,9 @@
 }
 
 body {
-    background-color: white;
-    font-family: Arial, sans-serif;
+    background-color: black;
+   color:white;
+    font-family: courier;
 }
 
 .navbar {
@@ -26,7 +27,7 @@ body {
    padding-top:5px;
     margin: 0 auto;
     padding: 40px;
-    color:green;
+    color:white;
 }
 
 .analysis label{
@@ -92,7 +93,7 @@ display: inline-block ;
 
 
 h2 {
-    color: green;
+    color: white;
 }
 
 form {
@@ -123,7 +124,7 @@ input[type="text"], select {
 
 
 #submit-button {
-    background-color: green;
+    background-color: skyblue;
     color: white;
     border: none;
     padding: 10px 20px;
