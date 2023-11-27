@@ -7,9 +7,9 @@
 }
 
 body {
-    background-color: white;
-   color:black;
-    font-family: courier;
+    background-color: black;
+   color:White;
+    font-family: Arial;
 }
 
 .navbar {
@@ -26,7 +26,7 @@ body {
    padding-top:5px;
     margin: 0 auto;
     padding: 40px;
-    color:black;
+    color:white;
 }
 
 .analysis label{
@@ -123,7 +123,7 @@ input[type="text"], select {
 
 
 #submit-button {
-    background-color: blue;
+    background-color: green;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -134,16 +134,18 @@ input[type="text"], select {
   .info-icon {
         font-size: 13px;
         cursor: pointer;
-        
+      
     }
     .dialog-box {
         display: none;
         position: absolute;
-        background-color: #fff;
+        background-color: grey;
         border: 1px solid #ccc;
         padding: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         z-index: 1;
+        color:white;
+
     }
 
 /* Add media queries for responsive design */
