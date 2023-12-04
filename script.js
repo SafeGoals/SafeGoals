@@ -64,6 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+//follow-up writeup
+
+         var inputElement = document.getElementById('Club-name');
+    var showDiv = document.getElementById('show');
+
+    // Function to display input value in the div with 'Club Name: '
+    function displayClubName() {
+      var clubName = inputElement.value;
+      showDiv.textContent = 'Goals probability for:'   +  clubName;
+    }                           
 //stake
 
 function displayMessage() {
