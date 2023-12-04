@@ -23,22 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const gspResult = document.getElementById("gsp");
     const checkbox1 = document.getElementById("checkbox1");
     const checkbox2 = document.getElementById("checkbox2");
-const inputElement = document.getElementById('Club-name');
-    const showDiv = document.getElementById('show');
+
 
         
     submitButton.addEventListener("click", function () {
         const homeGoals = parseFloat(HGInput.value);
         const awayGoals = parseFloat(HAInput.value);
         const totalGoals = homeGoals + awayGoals;
-         var clubName = inputElement.value;
-      showDiv.textContent = 'Goals probability for:'   +  clubName;
-    
-
-
-
-        
-         
+                
         const homePercentage = (homeGoals / totalGoals) * 100;
         const awayPercentage = (awayGoals / totalGoals) * 100;
 
