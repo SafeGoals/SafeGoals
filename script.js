@@ -23,12 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const gspResult = document.getElementById("gsp");
     const checkbox1 = document.getElementById("checkbox1");
     const checkbox2 = document.getElementById("checkbox2");
+const inputElement = document.getElementById('Club-name');
+    const showDiv = document.getElementById('show');
 
+        
     submitButton.addEventListener("click", function () {
         const homeGoals = parseFloat(HGInput.value);
         const awayGoals = parseFloat(HAInput.value);
         const totalGoals = homeGoals + awayGoals;
+         var clubName = inputElement.value;
+      showDiv.textContent = 'Goals probability for:'   +  clubName;
+    
 
+
+
+        
+         
         const homePercentage = (homeGoals / totalGoals) * 100;
         const awayPercentage = (awayGoals / totalGoals) * 100;
 
@@ -65,16 +75,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
 //follow-up writeup
 
-         var inputElement = document.getElementById('Club-name');
-    var showDiv = document.getElementById('show');
+         const inputElement = document.getElementById('Club-name');
+    const showDiv = document.getElementById('show');
 
     // Function to display input value in the div with 'Club Name: '
     function displayClubName() {
       var clubName = inputElement.value;
       showDiv.textContent = 'Goals probability for:'   +  clubName;
-    }                           
+    }        
+
+
+
+
+
+
+
 //stake
 
 function displayMessage() {
