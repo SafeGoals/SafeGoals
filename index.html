@@ -5,18 +5,29 @@
     <link rel="stylesheet" href="style.css">
    <link rel="icon" href="gojo.jpg" type="image">
 <style>
-    .form-container {
-        display: none;
-    }
-    td {
-        padding: 20px;
-        border: 1px solid grey;
-        cursor: pointer;
-        background-colour:red;
+body {
+      background-color: #000033; /* Dark shade background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color:white;
     }
 
-    .highlight {
-        background-color: green;
+    .desktop-icon {
+      width: 100px; /* Adjust icon size as needed */
+      height: 100px;
+      margin:10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      color: white; /* Adjust icon color as needed */
+      font-size: 40px;
     }
 </style>
 </head>
@@ -26,13 +37,7 @@
      🏆🏆 Welcome to The_weakend Algorithm 🤖🤖🖥️🖥️🏆🏆
         </marquee>
     </nav>
-    <table>
-        <tr>
-            <td onclick="showForm('column1-form', this)">Selection predicts</td>
-            <td onclick="showForm('column2-form', this)">Generate goal slips</td>
-            <td onclick="showForm('column3-form', this)">Generate corner slips</td>
-        </tr>
-    </table>
+    
 
     <div class="form-container" id="column1-form">
         <!-- Form content for Column 1 -->
@@ -58,6 +63,12 @@
             
             <button type="button" id="submit-button">Predict</button>
             <div class="analysis">
+            
+            
+             <div class="desktop-icon">
+    <div class="icon">🖥️</div> <!-- Desktop computer icon, you can replace it with your preferred icon -->
+  </div>
+  
         <h2>Results</h2>
         
         <label>GSP <span class="info-icon" onclick="showDialog()">ℹ️:</span></label>
@@ -83,121 +94,10 @@
         </form>
     </div>
 
-    <div class="form-container" id="column2-form">
-        <!-- Form content for Column 2 -->
-        <form >
-    <h2>Bet on Goals</h2>
-    <label for="location">Company:</label>
-    <select id="location">
-      <option value="sportybet">Sportybet</option>
-      <option value="msport">MSport</option>
-      <option value="22bet">22Bet</option>
-    </select>
-    <br>
-
-    <label for="goals">Goals:</label>
-    <select id="goals">
-      <option value="over0.5">Over 0.5</option>
-      <option value="over1.5">Over 1.5</option>
-      <option value="over2.5">Over 2.5</option>
-      <option value="over3.5">Over 3.5</option>
-      <option value="under0.5">Under 0.5</option>
-      <option value="under1.5">Under 1.5</option>
-      <option value="under2.5">Under 2.5</option>
-      <option value="under3.5">Under 3.5</option>
-    </select>
-    <br>
-
-    <label for="date">Date:</label>
-    <select id="date">
-      <!-- JavaScript can be used to dynamically generate date options -->
-    </select>
-    <br>
-
-    <label for="leagues">Leagues:</label>
-    <select id="leagues" multiple>
-      <option value="epl">EPL</option>
-      <option value="laliga">La Liga</option>
-      <option value="seriea">Serie A</option>
-    </select>
-    <br>
-
-    <label for="table-location">Table position (Optional):</label>
-    <input type="number" id="table-location" max="30">
-    <br>
-
-    <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button>   <input type="text" id="table-location" placeholder="bet code" max="30">
-  
-</form>
-    </div>
-
-    <div class="form-container" id="column3-form">
-        <!-- Form content for Column 3 -->
-        <form >
-    <h2>Bet on corners</h2>
-    <label for="location">Company:</label>
-    <select id="location">
-      <option value="sportybet">Sportybet</option>
-      <option value="msport">MSport</option>
-      <option value="22bet">22Bet</option>
-    </select>
-    <br>
-
-    <label for="goals">Corners:</label>
-    <select id="goals">
-      <option value="over0.5">Over 6.5</option>
-      <option value="over1.5">Over 7.5</option>
-      <option value="over2.5">Over 9.5</option>
-      <option value="over3.5">Over 11.5</option>
-      <option value="under0.5">Under 6.5</option>
-      <option value="under1.5">Under 7.5</option>
-      <option value="under2.5">Under 9.5</option>
-      <option value="under3.5">Under 11.5</option>
-    </select>
-    <br>
-
-    <label for="date">Date:</label>
-    <select id="date">
-      <!-- JavaScript can be used to dynamically generate date options -->
-    </select>
-    <br>
-
-    <label for="leagues">Leagues:</label>
-    <select id="leagues" multiple>
-      <option value="epl">EPL</option>
-      <option value="laliga">La Liga</option>
-      <option value="seriea">Serie A</option>
-    </select>
-    <br>
-
-    <label for="table-location">Table position (Optional):</label>
-    <input type="number" id="table-location" max="30">
-    <br>
-
-    <button id="submit-button" style="background-color: ;" onclick="displayMessage()">Generate code</button><input type="text" id="table-location" placeholder="bet code" max="30">
-  </div>
-</form>
-    </div>
+    
 
     <script src="script.js">
-        var highlightedColumn = null;
-
-        document.getElementById('column1-form').style.display = 'block';
-
-        function showForm(formId, clickedColumn) {
-            var forms = document.getElementsByClassName('form-container');
-            for (var i = 0; i < forms.length; i++) {
-                forms[i].style.display = 'none';
-            }
-
-            if (highlightedColumn) {
-                highlightedColumn.classList.remove('highlight');
-            }
-
-            document.getElementById(formId).style.display = 'block';
-            clickedColumn.classList.add('highlight');
-            highlightedColumn = clickedColumn;
-        }
+        
     </script>
 </body>
 </html>
