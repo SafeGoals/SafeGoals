@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            background-color: #000033; /* Dark shade background */
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #3498db; /* Sky-blue header */
+            width: 100%;
+        }
+        form {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 260px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db; /* Sky-blue button */
+            color: #ecf0f1;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="self-writing"></h1>
+    </header>
+    <form id="loginForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" onclick="checkPassword()">Login</button>
+    </form>
+    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+
+    <script>
+        function checkPassword() {
+            var passwordInput = document.getElementById("password").value;
+
+            // Check if the password is 'Strong'
+            if (passwordInput === 'Nuel') {
+                window.location.href = 'Ridim.html'; // Redirect to index.html
+            } else {
+                alert('Invalid password. Please try again.');
+            }
+        }
+        
+        
+        
+        const text = "Access Required";
+
+    function selfWrite(element, text, speed) {
+        let charIndex = 0;
+        function type() {
+            if (charIndex < text.length) {
+                element.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, speed);
+            } else {
+                element.innerHTML = "";
+                charIndex = 0;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    const selfWritingElement = document.getElementById('self-writing');
+    selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
+        
+        
+    </script>
+</body>
+</html>
