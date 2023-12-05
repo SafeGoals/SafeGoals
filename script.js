@@ -159,4 +159,39 @@ var highlightedColumn = null;
         }
 
 
-                    
+        //login form      
+      function checkPassword() {
+            var passwordInput = document.getElementById("password").value;
+
+            // Check if the password is 'Strong'
+            if (passwordInput === 'Nuel') {
+                window.location.href = 'Ridim.html'; // Redirect to index.html
+            } else {
+                alert('Invalid password. Please try again.');
+            }
+        }
+        
+        
+        
+        const text = "Access Required";
+
+    function selfWrite(element, text, speed) {
+        let charIndex = 0;
+        function type() {
+            if (charIndex < text.length) {
+                element.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, speed);
+            } else {
+                element.innerHTML = "";
+                charIndex = 0;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    const selfWritingElement = document.getElementById('self-writing');
+    selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
+        
+        
