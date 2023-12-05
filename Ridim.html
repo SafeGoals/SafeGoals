@@ -103,7 +103,23 @@ body {
     
 
     <script src="script.js">
-        
+          var inactivityTimeout;
+
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimeout);
+            inactivityTimeout = setTimeout(redirectHome, 120000); // 2 minutes in milliseconds
+        }
+
+        function redirectHome() {
+            window.location.href = 'index.html'; // Replace 'home.html' with your actual home page
+        }
+
+        // Reset the inactivity timer on user activity (e.g., mousemove or keydown)
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keydown', resetInactivityTimer);
+
+        // Initial setup of the inactivity timer
+        resetInactivityTimer();
     </script>
 </body>
 </html>
