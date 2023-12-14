@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Headers Example</title>
+  <style>
+  
+  body {
+    background-color:#000033;
+    color:white;
+    font-size:8px;
+}
+
+
+  .self-writing {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #333;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .self-writing::after {
+            content: "|";
+            animation: typing 3s steps(40) infinite;}
+  
+  
+  h1{
+      text-align:center;
+      margin-top:30px;
+  }
+    .dropdown-content {
+      display: none;
+    }
+
+    .dropdown-header {
+      cursor: pointer;
+    }
+    
+    
+.form-container{
+    display:none;
+}
+    h2{
+    background-color: #000055;
+        text-align: center;
+        cursor: pointer;
+        list-style:none ;
+        padding:10px;
+    }
+
+    table {
+        font-size:11px;
+        width: 100%;
+    }
+
+    table th {
+        background-color: #000033;
+        color: white;
+        padding: 10px;
+        border:1px solid lightgreen;
+    }
+    td{
+    border:1px solid lightgreen;
+    color:white;
+    background:;
+        padding:20px;
+        text-align:center;
+        padding:12px;
+    }
+    marquee{
+        background:#000077;
+font-size:18px;
+    }
+    g{
+        margin:10px;
+    }
+    
+    h1{
+        font-size:17px;
+    }
+  </style>
+</head>
+<body>
+<marquee scroll direction="left">This is SafeGoal 🥅⚽</marquee>
+
+<p id="self-writing-1"class="self-writing"></p>
+<p id="self-writing-2"class="self-writing"></p>
+<p id="self-writing-3"class="self-writing"></p>
+<p id="self-writing-4"class="self-writing"></p>
+
+
+<table>
+        <tr>
+            <td id="column1" onclick="showForm('column1-form', 'column1')">SafeGames</td>
+            <td id="column2" onclick="showForm('column2-form', 'column2')">Booked Games</td>
+            <td id="column3" onclick="showForm('column3-form', 'column3')">Prev results</td>
+        </tr>
+    </table>
+
+
+
+
+
+<div class ="form-container" id="column1-form">
+
+<h1>13/12/23 <b>&</b> 14/12/23</h1>
+
+  <h2 class="dropdown-header" onclick="toggleDropdown('section1')">CHE - MNU</h2>
+  <div id="section1" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+    
+      </div>
+
+  <h2 class="dropdown-header" onclick="toggleDropdown('section2')">ARS - NWC</h2>
+  <div id="section2" class="dropdown-content">
+        
+          <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>
+  
+  
+  <h2 class="dropdown-header" onclick="toggleDropdown('section3')">PSG - MLN</h2>
+  <div id="section3" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>
+          
+          
+          
+       <h2 class="dropdown-header" onclick="toggleDropdown('section4')">PSG - MLN</h2>
+  <div id="section4" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div> 
+          
+          
+          
+          
+          <h2 class="dropdown-header" onclick="toggleDropdown('section5')">PSG - MLN</h2>
+  <div id="section5" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>
+          
+        
+        
+        
+        
+        
+        
+        <h2 class="dropdown-header" onclick="toggleDropdown('section6')">PSG - MLN</h2>
+  <div id="section6" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>
+        
+        
+        
+       
+       
+       <h2 class="dropdown-header" onclick="toggleDropdown('section7')">PSG - MLN</h2>
+  <div id="section7" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>
+       
+       
+       
+       
+      <h2 class="dropdown-header" onclick="toggleDropdown('section8')">Arsenal - Brighton</h2>
+  <div id="section8" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div> 
+       
+       
+       
+       
+       <h2 class="dropdown-header" onclick="toggleDropdown('section9')">Brentfor - Mila</h2>
+  <div id="section9" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>
+       
+       
+       
+       
+       
+        <h2 class="dropdown-header" onclick="toggleDropdown('section10')">MCI - MLN</h2>
+  <div id="section10" class="dropdown-content">
+      <table cell-padding="12px">
+        <th>Home</th>
+        <th>Away</th>
+        
+        <tr>
+            <td>
+                <form >
+                    <g>Gsp:75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ✖️
+                </form>
+            </td>
+            <td>
+                <form >
+                    <g>Gsp: 75%</g><br />
+                    <g>over 0.5:</g> ☑️<br />
+                    <g>over 1.5:</g> ☑️
+                </form>
+            </td>
+        </tr>
+    </table>
+        
+          </div>  
+          
+          
+        </div>  
+          
+          
+          
+          
+          
+          <div class="form-container" id="column2-form">
+<h1>Mobile Top up</h1>
+
+<label>Balance:</label>
+<b id="balance" href="#">$1000</b>
+<div id="transactionForm">
+    <label for="value">Airtime amount:</label>
+    <div id="amountDisplay"></div>
+    <button onclick="cancelTransaction()">Cancel</button>
+    <button onclick="boostTransaction()">Boost</button>
+</div>
+<label for="amount">Amount: <a id="maxButton" onclick="fillMaxAmount()">Max</a></label>
+<input type="number" id="amount" name="amount" required>
+<label for="receiver">Enter receiver Address</label>
+<input type="text" id="receiver" name="receiver" required>
+<button onclick="processTransaction()">Process</button>
+<div id="countdown"></div>
+<div id="error"></div>
+</div>
+
+          
+          
+          
+          
+          
+
+  <script>
+    function toggleDropdown(sectionId) {
+      var dropdownContent = document.getElementById(sectionId);
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    }
+    
+    
+    
+    
+    
+    //self writing
+
+const texts = [
+        "Welcome....",
+        "Choose a SafeGame.",
+        "Select based on percentage .",
+        "Stake on any site of your choice."
+    ];
+
+    function selfWrite(element, text, speed) {
+        let charIndex = 0;
+        function type() {
+            if (charIndex < text.length) {
+                element.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, speed);
+            } else { 
+                charIndex = 0;
+            }
+        }
+        type();
+    }
+
+    const selfWritingElements = [
+        document.getElementById('self-writing-1'),
+        document.getElementById('self-writing-2'),
+        document.getElementById('self-writing-3'),
+        document.getElementById('self-writing-4')
+    ];
+
+    function startSelfWriting(index) {
+        if (index < selfWritingElements.length) {
+            selfWrite(selfWritingElements[index], texts[index], 100);
+            setTimeout(() => startSelfWriting(index + 1), texts[index].length * 100 + 2000);
+        }
+    }
+
+    startSelfWriting(0);
+
+
+//table
+
+var currentColumnId = null;
+
+        function showForm(formId, columnId) {
+            if (currentColumnId) {
+                document.getElementById(currentColumnId).style.backgroundColor = '';
+            }
+            currentColumnId = columnId;
+            document.getElementById(columnId).style.backgroundColor = 'green';
+
+            var forms = document.getElementsByClassName('form-container');
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+            document.getElementById(formId).style.display = 'block';
+        }
+
+
+
+
+  </script>
+
+</body>
+</html>
