@@ -7,8 +7,8 @@
   <style>
   
   body {
-    background-color:#000033;
-    color:white;
+    background-color:#eeffff;
+    color:black;
     font-size:8px;
 }
 
@@ -16,7 +16,7 @@
 display:none;
 }
 h2{
-    color:lightgreen;
+    color:darkgreen;
     text-decoration:underline ;
 }
 .about{
@@ -24,7 +24,7 @@ h2{
     font-size:14px;
 }
 strong{
-    color:lightgreen;
+    color:green;
     }
 
   .self-writing {
@@ -63,7 +63,7 @@ strong{
     
     
     h2{
-    background-color: #000055;
+    color:black;
         text-align: center;
         cursor: pointer;
         list-style:none ;
@@ -73,24 +73,26 @@ strong{
     table {
         font-size:11px;
         width: 100%;
+        border:2px solid grey;
+    box-shadow:0 0 2px 2px;
     }
 
     table th {
-        background-color: #000033;
-        color: white;
+        background-color: #eeeeff;
+        color: black;
         padding: 10px;
-        border:1px solid lightgreen;
+        border:1px solid green;
     }
     td{
-    border:1px solid lightgreen;
-    color:white;
+    border:1px solid green;
+    color:black;
     background:;
         padding:20px;
         text-align:center;
         padding:12px;
     }
     marquee{
-        background:#000077;
+        background:#eeffff;
 font-size:18px;
     }
     g{
@@ -143,7 +145,7 @@ font-size:18px;
         
         /*terms*/
         h2{
-    color:light;
+    
     text-decoration:underline ;
 }
 .about{
@@ -156,16 +158,40 @@ strong{
 }
 
 
+.background {
+    background-image: url('Safe.mp4');
+    background-size:cover;
+background-position:center;
+
+    width:100%;
+    height:50vh
+    
+    
+}
+
+
+
+
+
   </style>
 </head>
 <body>
 <marquee scroll direction="left">This is SafeGoal 🥅⚽</marquee>
 
+
+
+
+<div class="pt"> 
 <p id="self-writing-1"class="self-writing"></p>
 <p id="self-writing-2"class="self-writing"></p>
 <p id="self-writing-3"class="self-writing"></p>
 <p id="self-writing-4"class="self-writing"></p>
+</div>
 
+<div class="background">
+    
+    
+</div>
 
 <table>
         <tr>
@@ -763,7 +789,7 @@ var currentColumnId = null;
                 document.getElementById(currentColumnId).style.backgroundColor = '';
             }
             currentColumnId = columnId;
-            document.getElementById(columnId).style.backgroundColor = 'green';
+            document.getElementById(columnId).style.backgroundColor = 'red';
 
             var forms = document.getElementsByClassName('form-container');
             for (var i = 0; i < forms.length; i++) {
