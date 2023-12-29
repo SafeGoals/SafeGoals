@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <title>Page Title</title>
     </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <style>
         
+        
+        @media(min-width:760px){
+    /* Style for @max's Laptop */
+  body { 
+  
+    width:300px;
+    
+}
+
+/* Additional styles can be added based on specific preferences */
+
+}
 .dropdown h1{
     text-decoration:underline ;
     color:white;
@@ -97,8 +109,12 @@ padding-bottom:70px;
         box-shadow:  5px 5px grey;
         border:1px solid darkgrey;
     }
+    #head b{
+        text-align:right ;
+        justify-content:right ;
+    }
     
-    iframe{
+    .frame{
     text-align:center ;
 justify-content:center ;
 
@@ -273,7 +289,7 @@ h2{
       padding: 10px;
       font-size:10px;
    } 
-            
+
 
     </style>
     <body>
@@ -315,6 +331,7 @@ h2{
     <li class="dropdown-header" id="head" onclick="toggleDropdown('section0')">Today
         
     </li>
+    
     </div>
     <div id="section0" class="dropdown-content">
 
@@ -658,6 +675,8 @@ h2{
         
       </div>  
         
+        <div class="frame">
+            
         
         <iframe src="fkya">
             
@@ -667,7 +686,7 @@ h2{
         
         
         
-        
+        </div>
         
         
         <div class="fx">
@@ -803,4 +822,4 @@ function copyToClipboard(text) {
 
     </script>
     </body>
-  </html>
+</html>
