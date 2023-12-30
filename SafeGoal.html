@@ -20,47 +20,51 @@
 /* Additional styles can be added based on specific preferences */
 
 }
-        }
         
-.dropdown h1{
-    text-decoration:underline ;
-    color:white;
-    padding:45px;
-    margin:15px;
-    font-size:25px;
+       
     
-    
-}
+
+
+ .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top:20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire container */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title { 
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #666;
+        }
+
+
+
+
+
+
 
 
 /*table*/
-.form-container{
-display:none;
-padding-bottom:70px;
-}
 
-
-  .self-writing {
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid #333;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
-        .self-writing::after {
-            content: "|";
-            animation: typing 3s steps(40) infinite;}
-  
   
   
   
@@ -73,7 +77,7 @@ padding-bottom:70px;
    .h1{
       text-align:center;
       font-size:19px;
-      
+      color:black;
       
   }
     .dropdown-content {
@@ -84,10 +88,10 @@ padding-bottom:70px;
 
     .dropdown-header {
       cursor: pointer;
-      font-size:25px;
+      font-size:20px;
       text-decoration:underline ;
       padding:7px;
-      
+      font-family: Arial, sans-serif;
     }
     
     .dropdown-header #head :active{
@@ -99,12 +103,11 @@ padding-bottom:70px;
     }
     
     .dropdown-content h2{
-        color:lightgreen;
+        color:#333;
         border:1px solid white;
-        box-shadow:  -3px 3px grey;
-        border:1px solid darkgrey;
+        
     }
-    #head{
+    head{
         background-color:;
         padding:7px;
         margin:12px;
@@ -130,6 +133,7 @@ margin-left:15px;
         cursor: pointer;
         list-style:none ;
         padding:10px;
+        color:#333;
     }
 
     table {
@@ -139,16 +143,15 @@ margin-left:15px;
     }
 
     table th {
-        background-color: #000033;
-        color: white;
+        background-color: #ffff;
+        color: #333;
         padding: 10px;
         border:1px solid lightgreen;
     }
     td{
-    border:1px solid lightgreen;
+    border:1px solid black;
     border-radius:5px;
-    color:white;
-    background:;
+    color:#333;
         padding:20px;
         text-align:center;
         padding:12px;
@@ -166,13 +169,14 @@ font-size:18px;
     bookmakers-list {
             list-style-type: none;
             padding: 0;
-            
+            color:#666;
         }
 
         .bookmaker-item {
             margin-bottom: 10px;
             font-size:12px;
             padding:10px;
+            color:black;
         }
 
         .bookmaker-number {
@@ -205,7 +209,7 @@ font-size:18px;
 
 
 .fa-dollar, .fa-question, .fa-laptop{
-    color:gold;
+    color:black;
 }
 
 
@@ -228,7 +232,7 @@ h2{
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #333;
+            background-color: #f0f0f0 ;
             color: white;
             margin: 0;
             padding: 0;
@@ -252,13 +256,14 @@ h2{
         .slide {
             width: 300px;
             height: 200px;
-            background-color: #444;
+            background-color: lightgreen;
             margin-right: 20px;
             flex-shrink: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             touch-action: pan-x;
+            color:#333;
         }
 
         .slide h2 {
@@ -284,11 +289,12 @@ h2{
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #555;
+      background-color: #fff;
       display: flex;
       justify-content: space-around;
       padding: 10px;
       font-size:10px;
+      color:black;
    } 
 
 
@@ -318,22 +324,27 @@ h2{
         </div>
         
     </div>
+    
+    <!--
     <div class="controls">
         <button class="control-button" onclick="prevSlide()"><</button>
         <button class="control-button" onclick="nextSlide()">></button>
     </div>
         
-        
+        -->
         
         
 
 
-<div class="dropdown">
-    <li class="dropdown-header" id="head" onclick="toggleDropdown('section0')">Today
+<div class="card">
+<img src="your_image_url.jpg" alt="Card Image">
+<div class="card-content">
+    <h3 class="card-title" id="head" onclick="toggleDropdown('section0')">Today
         
-    </li>
-    
+    </h3>
+    <p class="card-description">This is a description of the card content. It can be as long as needed.</p>
     </div>
+    
     <div id="section0" class="dropdown-content">
 
   <h2 class="dropdown-header" onclick="toggleDropdown('section1')">Celta - Granada</h2>
@@ -635,15 +646,20 @@ h2{
 
 
 
-<div class ="form-container" id="column1-form">
 
-</div>
+
+
+
+          <div class="card">
+    <img src="your_image_url.jpg" alt="Card Image "/>
+          <div class="card-content">
           
-          <div class="dropdown">
-          
-          <li class="dropdown-header" id="head" onclick="toggleDropdown('section01')">Booked games
-        
-    </li>
+          <h3 class="card-title" id="head" onclick="toggleDropdown('section01')">Booked game   
+    </h3>
+    <p class="card-description">This is a description of the card content. It can be as long as needed.</p>
+    </div>
+    
+    
     <div id="section01" class="dropdown-content">
 
 <ul class="bookmakers-list">
@@ -672,9 +688,11 @@ h2{
 
 </div>
 
+</div>
+
         
         
-      </div>  
+      
         
         <div class="frame">
             
