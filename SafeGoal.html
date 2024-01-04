@@ -108,6 +108,18 @@
         border:1px solid white;
         
     }
+    
+    
+    .dropdown-content p{
+padding:7px;
+    color:black;
+}
+    
+    
+    
+    
+    
+    
     head{
         background-color:;
         padding:7px;
@@ -280,7 +292,7 @@ h2{
 #slide2 {
             width: 300px;
             height: 100px;
-            background-image: url("sporty.jpg");
+            background-image: url("f1.jpg");
             object-fit:cover;
             margin-right: 20px;
             flex-shrink: 0;
@@ -290,6 +302,43 @@ h2{
             touch-action: pan-x;
             color:white;
         }
+        
+        
+     #slide3 {
+            width: 300px;
+            height: 100px;
+            background-image: url("f3.jpg");
+            object-fit:cover;
+            margin-right: 20px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: pan-x;
+            color:white;
+        }   
+        
+        
+        
+        
+        #slide4 {
+            width: 300px;
+            height: 100px;
+            background-image: url("f2.jpg");
+            object-fit:cover;
+            margin-right: 20px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: pan-x;
+            color:white;
+        }
+        
+        
+        
+        
+        
 
 
 
@@ -350,10 +399,10 @@ i{
             <div class="slide" id="slide2">
                 <h2>Choose a game</h2>
             </div>
-            <div class="slide">
+            <div class="slide" id="slide3">
                 <h2>Select base on percentage </h2>
             </div>
-            <div class="slide">
+            <div class="slide" id="slide4">
                 <h2>place on any company</h2>
             </div>
             <div class="slide">
@@ -384,7 +433,7 @@ i{
     </div>
     
     <div id="section0" class="dropdown-content">
-
+<p>Tap on any game to view the GSP</p> 
   <h2 class="dropdown-header" onclick="toggleDropdown('section1')">Celta - Granada</h2>
   <div id="section1" class="dropdown-content">
       <table cell-padding="12px">
@@ -752,16 +801,16 @@ i{
         
         <div class="fx" style="text-align: center;">
     
-    <div style="display: inline-block; margin: 0 20px;">
+    <div style="display: inline-block; margin: 0 20px;" id="column1" onclick="showForm('column1-form', 'column1')">
         <a href="about.html"><i class="fa fa-laptop" style="font-size:20px "></i>
         
         <p>About</p></a>
     </div>
-    <div style="display: inline-block; margin: 0 20px;">
+    <div id="column2" onclick="showForm('column2-form', 'column2')" style="display: inline-block; margin: 0 20px;">
         <a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20to%20Sponsor%20Pred" target="_blank"><i class="fa fa-dollar" style="font-size:20px "></i>
         <p>sponsorship</p></a>
     </div>
-    <div style="display: inline-block; margin: 0 20px;">
+    <div id="column3" onclick="showForm('column3-form', 'column2')" style="display: inline-block; margin: 0 20px;">
         <a href="faq.html"><i class="fa fa-question" style="font-size:20px "></i>
         <p>FAQ</p></a>
     </div>
