@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FAQ</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <style>
+    body {
+    background-color:#f0f0f0;
+}
+    
+        .dropdown-content {
+      display: none;
+      border-radius:1px;
+      border:1px solid grey;
+      box-shadow:2px 2px grey;
+      font-size:15px;
+      font-family: Arial, sans-serif;
+      margin:9px;
+    }
+
+    .dropdown-header {
+      cursor: pointer;
+      font-size:15px;
+      padding:7px;
+      font-family: Arial, sans-serif;
+    
+    }  
+        
+      .dropdown-content p{
+          padding:5px;
+          
+      }    
+           
+
+
+ .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            
+            margin: 10px;
+            margin-bottom:80px;
+            background-color: #fff;
+    
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire container */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title { 
+            font-size: 20px;
+            margin-bottom: 3px;
+            color: #333;
+            padding:7px;
+        }
+
+        .card-description {
+        text-decoration:underline;
+            font-size: 16px;
+            color: #666;
+        }
+
+
+     .fx{
+       position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      font-size:10px;
+      color:black;
+   } 
+   .fx a{
+       color:lighgreen;
+   } 
+
+a{
+    color:green;
+    text-decoration:none;
+}
+
+
+    </style>
+    <body>
+        
+
+
+<div class="card">
+<img src="faq.jpg" alt="Card Image">
+<h3 class="card-title" id="head" >Frequently Asked Questions</h3>
+<div class="card-content">
+    
+    <p class="card-description" onclick="toggleDropdown('section0')">Is SafeGoal legit?</p>
+    </div>
+    
+    <div id="section0" class="dropdown-content">
+ 
+  <p class="dropdown-header"'>Safegoal uses an algorithm that predicts a teams scoring probality expressed in terms of percentage. it is only 97% accurate if you properly follow the figures<p>This therefore serves as a guide in placing bets on goals</p>
+  </p>
+  
+  </div>
+  
+  
+  <!-- start-->
+  <div class="card-content">
+  <p class="card-description" onclick="toggleDropdown('section02')">How to use?.</p>
+    </div>
+    
+    <div id="section02" class="dropdown-content">
+ 
+  <p class="dropdown-header"'>Each team has a gsp, place your bets base on which team has a higher one if you plan to bet one just a teams' goal.<p>GSp > 50% but less than 60% could indicate a single goal</p>
+  <p>GSP > 60% could indicate multiple goals for a team</p></p>
+  
+  </div>
+  <!-- end-->
+  
+  <!-- start-->
+  <div class="card-content">
+  <p class="card-description" onclick="toggleDropdown('section03')">Who owns SafeGoal?.</p>
+    </div>
+    
+    <div id="section03" class="dropdown-content">
+ 
+  <p class="dropdown-header"'><b>Nuel Agafie</b>.<p>A code upgrader,  Learned in 6 major programming languages</p>
+  <p>Creator of NIT passkey sytem </p></p>
+  
+  </div>
+  <!-- end-->
+  
+</div>
+
+
+
+
+    
+</div>
+
+<div class="fx" style="text-align: center;">
+    
+    <div style="display: inline-block; margin: 0 20px;">
+        <a href="Safegoal.html"><i class="fa fa-home" style="font-size:20px "></i>
+        
+        <p>Home</p></a>
+    </div>
+    <div style="display: inline-block; margin: 0 20px;">
+        <a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20to%20Sponsor%20Pred" target="_blank"><i class="fa fa-dollar" style="font-size:20px "></i>
+        <p>sponsorship</p></a>
+    </div>
+    <div style="display: inline-block; margin: 0 20px;">
+        <a href="About.html"><i class="fa fa-question" style="font-size:20px "></i>
+        <p>About</p></a>
+    </div>
+</div>
+
+<script> 
+
+    function toggleDropdown(sectionId) {
+      var dropdownContent = document.getElementById(sectionId);
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    }
+    
+    
+</script>
+    </body>
+  </html
