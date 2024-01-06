@@ -23,6 +23,21 @@
         
        
     
+    
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    
 
 
  .card {
@@ -403,7 +418,7 @@ i{
                 <h2>Choose a game</h2>
             </div>
             <div class="slide" id="slide3">
-                <h2>Select based on percentage </h2>
+                <h2>Select base on percentage </h2>
             </div>
             <div class="slide" id="slide4">
                 <h2>place on any company</h2>
@@ -744,7 +759,7 @@ i{
     <img src="f3.jpg" alt="Card Image "/>
           <div class="card-content">
           
-          <h3 class="card-title" id="head" >Booked games   
+          <h3 class="card-title" id="head" >Booked game   
     </h3>
     <p class="card-description">The lesser the games the safer.<br />The safer the games the better. make a pick from any of these ganes, edit, flex, the choice is yours👍.</p><i onclick="toggleDropdown('section01')">Tap to view</i>
     </div>
@@ -822,6 +837,16 @@ i{
 </div>
 
         
+        
+        
+        
+       
+        
+        <div id="modal">
+    <p>Hello!</p>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+
         
         
         
@@ -924,6 +949,39 @@ function copyToClipboard(text) {
             document.body.removeChild(tempInput);
             alert(`Copied: ${text}`);
         }
+
+
+
+
+
+
+ // Function to close the modal
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Check if it's the first visit
+    if (!localStorage.getItem('visitCount')) {
+      // Set initial visit count to 1
+      localStorage.setItem('visitCount', 1);
+
+      // Show the modal after 3 seconds
+      setTimeout(function() {
+        document.getElementById('modal').style.display = 'block';
+      }, 3000);
+    } else {
+      // Increment the visit count
+      var visitCount = parseInt(localStorage.getItem('visitCount')) + 1;
+      localStorage.setItem('visitCount', visitCount);
+
+      // Check if it's the fifth visit, then redirect
+      if (visitCount === 5) {
+        window.location.href = 'index.html';
+      }
+    }
+
+
+
 
 
 
