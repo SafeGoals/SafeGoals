@@ -24,7 +24,7 @@
        
     
     
-    #modal {
+      #trialModal {
       display: none;
       position: fixed;
       top: 50%;
@@ -36,8 +36,6 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
-    
-    
 
 
  .card {
@@ -842,12 +840,11 @@ i{
         
        
         
-        <div id="modal">
-    <p>Hello!</p>
-    <button onclick="closeModal()">Cancel</button>
+        <div id="trialModal">
+    <p>You are on a free trial which will expire after 2 visits.</p>
+    <button onclick="cancelTrial()">Cancel</button>
   </div>
 
-        
         
         
         
@@ -954,10 +951,8 @@ function copyToClipboard(text) {
 
 
 
-
- // Function to close the modal
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
+function cancelTrial() {
+      document.getElementById('trialModal').style.display = 'none';
     }
 
     // Check if it's the first visit
@@ -965,17 +960,16 @@ function copyToClipboard(text) {
       // Set initial visit count to 1
       localStorage.setItem('visitCount', 1);
 
-      // Show the modal after 3 seconds
-      setTimeout(function() {
-        document.getElementById('modal').style.display = 'block';
-      }, 3000);
+      // Show the trial modal
+      document.getElementById('trialModal').style.display = 'block';
     } else {
       // Increment the visit count
       var visitCount = parseInt(localStorage.getItem('visitCount')) + 1;
       localStorage.setItem('visitCount', visitCount);
 
-      // Check if it's the fifth visit, then redirect
-      if (visitCount === 5) {
+      // Check if the user has exceeded 2 visits
+      if (visitCount > 2) {
+        // Redirect to index.html
         window.location.href = 'index.html';
       }
     }
