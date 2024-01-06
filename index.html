@@ -68,7 +68,9 @@
         <input type="password" id="password" name="password" required>
         <button type="button" onclick="checkPassword()">Login</button>
     </form>
-    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+    <p><a href="#" id="forgotPassword">No Password?</a></p>
+    
+<p><a href="#" id="forgotPassword">Free Trial</a></p>
 
     <script>
         function checkPassword() {
@@ -76,13 +78,18 @@
 
             // Check if the password is 'Strong'
             if (passwordInput === 'Nuel') {
+            localStorage.setItem('visit', 5);
+
                 window.location.href = 'SafeGoal.html'; // Redirect to index.html
+                
             } else {
                 alert('Invalid password. Please try again.');
             }
         }
         
         
+        
+        //accs rq demo
         
         const text = "Access Required";
 
