@@ -24,7 +24,7 @@
        
     
     
-      #trialModal {
+ #welcomeModal {
       display: none;
       position: fixed;
       top: 50%;
@@ -36,6 +36,8 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
+    
+    
 
 
  .card {
@@ -840,11 +842,11 @@ i{
         
        
         
-        <div id="trialModal">
-    <p>You are on a free trial which will expire after 2 visits.</p>
-    <button onclick="cancelTrial()">Cancel</button>
+        <div id="welcomeModal">
+    <p>Hello!</p>
+    <button onclick="cancelWelcome()">Cancel</button>
   </div>
-
+        
         
         
         
@@ -951,32 +953,32 @@ function copyToClipboard(text) {
 
 
 
-function cancelTrial() {
-      document.getElementById('trialModal').style.display = 'none';
+
+  // Function to cancel the welcome modal
+    function cancelWelcome() {
+      document.getElementById('welcomeModal').style.display = 'none';
     }
 
     // Check if it's the first visit
-    if (!localStorage.getItem('visitCount')) {
-      // Set initial visit count to 1
-      localStorage.setItem('visitCount', 1);
+    if (!localStorage.getItem('visit')) {
+      // Set initial visit to 1
+      localStorage.setItem('visit', 1);
 
-      // Show the trial modal
-      document.getElementById('trialModal').style.display = 'block';
+      // Show the welcome modal after 3 seconds
+      setTimeout(function() {
+        document.getElementById('welcomeModal').style.display = 'block';
+      }, 3000);
     } else {
-      // Increment the visit count
-      var visitCount = parseInt(localStorage.getItem('visitCount')) + 1;
-      localStorage.setItem('visitCount', visitCount);
+      // Increment the visit
+      var visit = parseInt(localStorage.getItem('visit')) + 1;
+      localStorage.setItem('visit', visit);
 
-      // Check if the user has exceeded 2 visits
-      if (visitCount > 2) {
+      // Check if it's the fifth visit
+      if (visit === 5) {
         // Redirect to index.html
         window.location.href = 'index.html';
       }
     }
-
-
-
-
 
 
     </script>
