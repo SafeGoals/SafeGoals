@@ -408,19 +408,19 @@ tr{
     
         <div class="slider-wrapper" id="slider">
             <div class="slide">
-                <h2>Welcome to SafeGoal</h2>
+                <h2>Welcome to SafeGoals</h2>
             </div>
             <div class="slide" id="slide2">
-                <h2>Choose a game</h2>
+                <h2>Choose a safe game</h2>
             </div>
             <div class="slide" id="slide3">
-                <h2>Select base on percentage </h2>
+                <h2>For no game is Sure </h2>
             </div>
             <div class="slide" id="slide4">
-                <h2>place on any company</h2>
+                <h2>But a game can be safe</h2>
             </div>
             <div class="slide">
-                <h2>Thank me later</h2>
+                <h2>SafeGoals make it safe</h2>
             </div>
         </div>
         
@@ -452,9 +452,9 @@ tr{
     <img src="f3.jpg" alt="Card Image "/>
           <div class="card-content">
           
-          <h3 class="card-title" id="head" >Booked game   
+          <h3 class="card-title" id="head" >SafeGames are Best   
     </h3>
-    <p class="card-description">The lesser the games the safer.<br />The safer the games the better. make a pick from any of these ganes, edit, flex, the choice is yours👍.</p>
+    <p class="card-description">The Larger the GSP the better.<br />The safer the games the better. make a pick from any of these ganes, edit, flex, the choice is in your hands👍.</p>
     </div>
 
 </div>
@@ -470,14 +470,14 @@ tr{
           
           
        <div class ="form-container" id="column2-form">
-<div class="safe"> <b class="h1">Safe <strong>Goal</strong>⚽</b>  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game.." title="Type in a name"></div>
+<div class="safe"> <b class="h1">Safe <strong>Goals</strong>⚽</b>  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game.." title="Type in a name"></div>
     
 <h1>11/1/24</h1>
 <div id="myUL">
 
-  <h2 class="dropdown-header" onclick="toggleDropdown('section6')">
+  <h2 class="dropdown-header" onclick="toggleDropdown('section1')">
   <a> Ars - Man utd</a></h2>
-  <div id="section6" class="dropdown-content">
+  <div id="section1" class="dropdown-content">
     <table cell-padding="12px">
         <th id="H">Home</th>
         <th id="A">Away</th>
@@ -637,6 +637,23 @@ tr{
 
         
           
+        
+        
+        
+       <!-- Overlay with terms and conditions -->
+<div id="overlay">
+  <div id="termsBox">
+    <h2>Terms and Conditions</h2>
+    <!-- Your terms and conditions content here -->
+    <p>This is where your terms and conditions message goes.</p>
+    <button onclick="closeTerms()">I Agree</button>
+  </div>
+</div>
+        
+ 
+        
+        
+        
           
         
   <script >
@@ -738,7 +755,37 @@ function myFunction() {
 
 
 
-        
+
+
+
+  // Check if visit count is greater than 2, then redirect
+  let visitCount = parseInt(localStorage.getItem('visitcount')) || 0;
+  if (visitCount >= 2) {
+    window.location.href = 'index.html';
+  } else {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        document.getElementById('overlay').style.display = 'flex';
+      }, 2000);
+    });
+  }
+
+  function closeTerms() {
+    // Increment visit count
+    visitCount++;
+    localStorage.setItem('visitCount', visitCount);
+
+    // Hide terms and conditions overlay
+    document.getElementById('overlay').style.display = 'none';
+
+    // Show free mode message
+    alert('You\'re on free mode!');
+  }
+
+
+
+
+
 
 
   </script>
