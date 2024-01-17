@@ -778,7 +778,7 @@ function myFunction() {
 
 
   // Check if visit count is greater than 2, then redirect
-  let visitCount = parseInt(localStorage.getItem('visitcount')) || 0;
+  let visitCount = parseInt(localStorage.getItem('visited')) || 0;
   if (visitCount >= 2) {
     window.location.href = 'index.html';
   } else {
