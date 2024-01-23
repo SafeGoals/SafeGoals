@@ -425,7 +425,7 @@ marquee{
 
   </style>
 </head>
-<body onload="showForm('column1-form', 'column1')">
+<body onload=" showTermsPopup();  showForm('column1-form', 'column1')">
 
 
     <!--
@@ -813,42 +813,57 @@ function myFunction() {
 
 
 
+  // Function to set cookie
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
 
+    // Function to get cookie value
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
 
+    // Function to show terms and conditions pop-up
+    function showTermsPopup() {
+      var visits = getCookie("Visits");
+      if (visits === "") {
+        // First-time visitor, show pop-up
+        document.getElementById("overlay").style.display = "block";
+        setCookie("Visits", 1, 365); // Set cookie for one year
+      } else {
+        // Returning visitor
+        visits = parseInt(visits);
+        if (visits < 2) {
+          setCookie("Visits", visits + 1, 365); // Increment visit count
+        } else {
+          // Redirect after 2 visits
+          window.location.href = "index.html";
+        }
+      }
+    }
 
-  // Check if visit count is greater than 2, then redirect
-  let visitCount = parseInt(localStorage.getItem('visited')) || 0;
-  if (visitCount >= 2) {
-    window.location.href = 'index.html';
-  } else {
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        document.getElementById('overlay').style.display = 'flex';
-      }, 2000);
-    });
+    // Function to close terms and conditions pop-up
+    function closeTerms() {
+      document.getElementById("overlay").style.display = "none";
   }
 
-  function closeTerms() {
-    // Increment visit count
-    visitCount++;
-    localStorage.setItem('visitCount', visitCount);
 
-    // Hide terms and conditions overlay
-    document.getElementById('overlay').style.display = 'none';
-
-    // Show free mode message
-    alert('You\'re on free mode!');
-  }
-
-
-
-
-
-
-    
-
-
-
+  
   </script>
 
 </body>
