@@ -845,6 +845,31 @@ function myFunction() {
 
 
 
+    document.addEventListener('DOMContentLoaded', function() {
+    // Check if visit count is greater than 1, then redirect
+    let visitCount = parseInt(localStorage.getItem('visitCount')) || 0;
+
+    if (visitCount === 0) {
+        // Show terms and conditions overlay
+        document.getElementById('overlay').style.display = 'flex';
+    }
+
+    localStorage.setItem('visitCount', visitCount + 1);
+});
+
+function closeTerms() {
+    // Hide terms and conditions overlay
+    document.getElementById('overlay').style.display = 'none';
+
+    // You can add additional actions after the user agrees, if needed
+    // Example: Redirect to another page
+    // window.location.href = 'your_page.html';
+}
+
+
+
+
+
 
   </script>
 
