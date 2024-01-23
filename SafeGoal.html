@@ -425,7 +425,7 @@ marquee{
 
   </style>
 </head>
-<body onload="showForm('column1-form', 'column1')">
+<body onload="showTermsPopup(); showForm('column1-form', 'column1')">
 
 
     <!--
@@ -599,7 +599,7 @@ marquee{
             <div class ="form-container" id="column3-form">
           
 <div class="safe"> <b class="h1">Safe <strong>Goal</strong>⚽</b>  <b class="side">Get passkey</b></div>
-<h1>17/12/23</h1>
+
 
 <div class="card" id="faq">
 <img src="faq1.jpeg" alt="Card Image">
@@ -637,7 +637,7 @@ marquee{
     
     <div id="section03" class="dropdown-content">
  
-  <p class="dropdown-header"'><b>Nuel Agafie</b>.<p>A code upgrader,  Learned in 6 major programming languages</p>
+  <p class="dropdown-header"'><b>Nozel</b>.<p>A code upgrader,  Learned in 6 major programming languages</p>
   <p>Creator of NIT passkey sytem </p></p>
   
   </div>
@@ -868,6 +868,28 @@ function myFunction() {
 
 
 
+//visits
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Check if 'seen' is stored in localStorage
+      var visits = localStorage.getItem("seen");
+      
+      // If 'seen' is not present or less than 2, proceed with the visit
+      if (!visits || visits < 2) {
+        // Increment visit count
+        visits = visits ? parseInt(visits) + 1 : 1;
+        
+        // Store the updated count in localStorage
+        localStorage.setItem("seen", visits);
+        
+        // Your existing logic or page content here
+
+      } else {
+        // Redirect to index.html after 2 visits
+        window.location.href = "index.html";
+      }
+    });
 
 
 
