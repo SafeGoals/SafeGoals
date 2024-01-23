@@ -425,7 +425,7 @@ marquee{
 
   </style>
 </head>
-<body onload="showTermsPopup(); showForm('column1-form', 'column1')">
+<body onload=" showForm('column1-form', 'column1')">
 
 
     <!--
@@ -894,6 +894,19 @@ function myFunction() {
 
 
 
+const cookieContainer = document.querySelector(".overlay");
+const cookieButton = document.querySelector(".close");
+
+cookieButton.addEventListener("click", () => {
+  cookieContainer.classList.remove("active");
+  localStorage.setItem("viewed", "true");
+});
+
+setTimeout(() => {
+  if (!localStorage.getItem("viewed")) {
+    cookieContainer.classList.add("active");
+  }
+}, 2000);
 
 
   
