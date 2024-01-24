@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <style>
-        /* Your styling goes here */
         body {
             background-color: #000033; /* Dark shade background */
             color: #ecf0f1;
@@ -69,60 +68,105 @@
         <input type="password" id="password" name="password" required>
         <button type="button" onclick="checkPassword()">Login</button>
     </form>
-    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
+    <p><a href="#" id="forgotPassword">Request Password</a></p>
 
     <script>
-        
-        const storageKey = 'passwordUsed';
-        const visitCountKey = 'visitCount';
-
         function checkPassword() {
-            const passwordInput = document.getElementById('password').value;
+            var passwordInput = document.getElementById("password").value;
 
-            // Check if the password is 'Nuel'
-            if (passwordInput === 'Nuel','Nozel','guy') {
-                const isPasswordUsed = localStorage.getItem(storageKey);
-
-                if (!isPasswordUsed) {
-                    // Mark password as used for this device
-                    localStorage.setItem(storageKey, 'true');
-
-                    // Increase visit count for redirected page
-                    let visitCount = parseInt(localStorage.getItem(visitCountKey)) || 0;
-                    visitCount += 20;
-                    localStorage.setItem(visitCountKey, visitCount.toString());
-
-                    window.location.href = 'SafeGoal.html'; // Redirect to index.html
-                } else {
-                    // Password has been used on another device
-                    alert('Password owned. Access denied.');
-                }
+            // Check if the password is 'Strong'
+            if (passwordInput === 'Nuel') {
+                window.location.href = 'Ridim.html'; // Redirect to index.html
             } else {
                 alert('Invalid password. Please try again.');
             }
         }
+        
+        
+        
+        const text = "Access Required";
 
-        const text = 'Access Required';
+    function selfWrite(element, text, speed) {
+        let charIndex = 0;
+        function type() {
+            if (charIndex < text.length) {
+                element.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, speed);
+            } else {
+                element.innerHTML = "";
+                charIndex = 0;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
 
-        function selfWrite(element, text, speed) {
-            let charIndex = 0;
-            function type() {
-                if (charIndex < text.length) {
-                    element.innerHTML += text.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(type, speed);
+    const selfWritingElement = document.getElementById('self-writing');
+    selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
+        
+        
+        
+        
+     //password entry   
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize visit count to 0 if not present
+            var visitCount = localStorage.getItem("visitCount");
+            if (!visitCount) {
+                localStorage.setItem("visitCount", 0);
+            }
+
+            // Initialize used passwords list to empty array if not present
+            var usedPasswords = JSON.parse(localStorage.getItem("usedPasswords")) || [];
+
+            // Function to check if a password has been used
+            function isPasswordUsed(password) {
+                return usedPasswords.includes(password);
+            }
+
+            // Function to mark a password as used
+            function markPasswordUsed(password) {
+                usedPasswords.push(password);
+                localStorage.setItem("usedPasswords", JSON.stringify(usedPasswords));
+            }
+
+            function checkPassword() {
+                var passwordInput = document.getElementById("password").value;
+
+                // Check if the password is 'Nuel' and has not been used
+                if (passwordInput === 'Nuel','Nagato' && !isPasswordUsed(passwordInput)) {
+                    // Redirect to index.html if password is correct
+                    window.location.href = 'SafeGoal.html';
+
+                    // Increase visit count by 10
+                    var newVisitCount = parseInt(visitCount) + 10;
+                    localStorage.setItem("visitCount", newVisitCount);
+
+                    // Mark the password as used
+                    markPasswordUsed(passwordInput);
                 } else {
-                    element.innerHTML = '';
-                    charIndex = 0;
-                    setTimeout(type, speed);
+                    // Redirect to blocked.html if password is already used
+                    window.location.href = 'blocked.html';
                 }
             }
-            type();
-        }
 
-        const selfWritingElement = document.getElementById('self-writing');
-        selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
+            // Your existing self-writing code
+            const text = "Access Required";
+            function selfWrite(element, text, speed) {
+                // ... (unchanged)
+            }
+            const selfWritingElement = document.getElementById('self-writing');
+            selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
+        });
+        
+        
+        
+        
+        
+        
+        
+        
     </script>
 </body>
 </html>
-
