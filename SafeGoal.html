@@ -17,30 +17,39 @@
     font-size:8px;
     margin:0;
 }
+    .cookie-container {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: #2f3640;
+  color: #f5f6fa;
+  padding: 0 32px;
+  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
 
-  .overlay {
-      display: ;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 300px;
-      background-color: rgba(0,0,0,0.7);
-      color: black;
-      border:1px solid black;
-      justify-content:center;
-      text-align: center;
-      overflow:scroll ;
-      margin-top:150px;
-    
-    }
-    .terms h2{
-    text-align:left;
-    }
-    button{
-        background-Color:skyblue;
-        border-radius:10px;
-    }
+  transition: 400ms;
+}
+
+.cookie-container.active {
+  bottom: 0;
+}
+
+.cookie-container a {
+  color: #f5f6fa;
+}
+
+.cookie-btn {
+  background: #e84118;
+  border: 0;
+  color: #f5f6fa;
+  padding: 12px 48px;
+  font-size: 18px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
 
     /* Style for terms and conditions box */
     #termsBox {
@@ -652,14 +661,14 @@ marquee{
         
             
          <!-- Overlay with terms and conditions -->
-<div class="overlay">
+<div class="cookie-container">
   <div class="termsBox">
     <h1>Welcome to SafeGoals</h1>
     <!-- Your terms and conditions content here -->
     
         <p>By clicking "I Agree" You consent to have read the <a href="terms.html">Terms and conditions</a> and are in concordance with its rules</p>
         
-        <button class="butt" onclick="closeTerms()">I Agree</button>
+        <button class="cookie-btn"">I Agree</button>
         
   </div>
   
@@ -813,16 +822,16 @@ function myFunction() {
 
 
 // Function to set cookie
-    const cookieContainer = document.querySelector(".overlay");
-const cookieButton = document.querySelector(".butt");
+    const cookieContainer = document.querySelector(".cookie-container");
+const cookieButton = document.querySelector(".cookie-btn");
 
 cookieButton.addEventListener("click", () => {
   cookieContainer.classList.remove("active");
-  localStorage.setItem("viewed", "true");
+  localStorage.setItem("cookieBannerDisplayed", "true");
 });
 
 setTimeout(() => {
-  if (!localStorage.getItem("viewed")) {
+  if (!localStorage.getItem("cookieBannerDisplayed")) {
     cookieContainer.classList.add("active");
   }
 }, 2000);
