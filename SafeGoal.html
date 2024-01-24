@@ -810,41 +810,6 @@ function myFunction() {
     }
 }
 
-    // Function to check if this is a new device
-        function isNewDevice() {
-            // Check if 'visited' key exists in localStorage
-            return !localStorage.getItem('visited');
-        }
-
-        // Function to update visit count
-        function updateVisitCount() {
-            // Initialize visit count to 0 if not present
-            var visitCount = localStorage.getItem('visitCount') || 0;
-
-            // Increase visit count
-            visitCount++;
-
-            // Update localStorage with the new visit count
-            localStorage.setItem('visitCount', visitCount);
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            if (isNewDevice()) {
-                // Increment visit count for new devices
-                updateVisitCount();
-
-                // Set 'visited' flag in localStorage to mark this device as visited
-                localStorage.setItem('visited', 'true');
-            }
-
-            // Check if the visit count exceeds 2
-            var visitCount = localStorage.getItem('visitCount') || 0;
-
-            if (visitCount > 2) {
-                // Redirect to index.html
-                window.location.href = 'index.html';
-            }
-        })
 
 
 // Function to set cookie
