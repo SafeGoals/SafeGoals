@@ -810,93 +810,45 @@ function myFunction() {
     }
 }
 
+    // Function to check if this is a new device
+        function isNewDevice() {
+            // Check if 'visited' key exists in localStorage
+            return !localStorage.getItem('visited');
+        }
 
+        // Function to update visit count
+        function updateVisitCount() {
+            // Initialize visit count to 0 if not present
+            var visitCount = localStorage.getItem('visitCount') || 0;
+
+            // Increase visit count
+            visitCount++;
+
+            // Update localStorage with the new visit count
+            localStorage.setItem('visitCount', visitCount);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (isNewDevice()) {
+                // Increment visit count for new devices
+                updateVisitCount();
+
+                // Set 'visited' flag in localStorage to mark this device as visited
+                localStorage.setItem('visited', 'true');
+            }
+
+            // Check if the visit count exceeds 2
+            var visitCount = localStorage.getItem('visitCount') || 0;
+
+            if (visitCount > 2) {
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            }
+        })
 
 
 // Function to set cookie
-    function setCookie(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-    // Function to get cookie value
-    function getCookie(cname) {
-      var name = cname + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-
-    // Function to show terms and conditions pop-up
-    function showTermsPopup() {
-      var visits = getCookie("Visits");
-      if (visits === "") {
-        // First-time visitor, show pop-up
-        document.getElementById("overlay").style.display = "block";
-        setCookie("Visits", 1, 365); // Set cookie for one year
-      } else {
-        // Returning visitor
-        visits = parseInt(visits);
-        if (visits < 2) {
-          setCookie("Visits", visits + 1, 365); // Increment visit count
-        } else {
-          // Redirect after 2 visits
-          window.location.href = "index.html";
-        }
-      }
-    }
-
-    // Function to close terms and conditions pop-up
-    function closeTerms() {
-      document.getElementById("overlay").style.display = "none";
-      alert("You are on Free mode");
-    }
-
-
-
-
-
-
-//visits
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-      // Check if 'seen' is stored in localStorage
-      var visits = localStorage.getItem("seen");
-      
-      // If 'seen' is not present or less than 2, proceed with the visit
-      if (!visits || visits < 2) {
-        // Increment visit count
-        visits = visits ? parseInt(visits) + 1 : 1;
-        
-        // Store the updated count in localStorage
-        localStorage.setItem("seen", visits);
-        
-        // Your existing logic or page content here
-
-      } else {
-        // Redirect to index.html after 2 visits
-        window.location.href = "index.html";
-      }
-    });
-
-
-
-
-const cookieContainer = document.querySelector(".overlay");
-const cookieButton = document.querySelector(".close");
-
+    
 cookieButton.addEventListener("click", () => {
   cookieContainer.classList.remove("active");
   localStorage.setItem("viewed", "true");
