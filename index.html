@@ -71,67 +71,68 @@
     <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Initialize visit count to 0 if not present
-            var visitCount = localStorage.getItem("visitCount");
-            if (!visitCount) {
-                localStorage.setItem("visitCount", 0);
+        
+    function checkPassword() {
+        var passwordInput = document.getElementById("password").value;
+
+        // Check if the password is 'Strong'
+        if (passwordInput === 'Nuel') {
+            updateVisitCount(); // Increase visit count
+            window.location.href = 'SafeGoal.html'; // Redirect to Ridim.html
+        } else {
+            alert('Invalid password. Please try again.');
+        }
+    }
+
+    const text = "Access Required";
+
+    function selfWrite(element, text, speed) {
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < text.length) {
+                element.innerHTML += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, speed);
+            } else {
+                element.innerHTML = "";
+                charIndex = 0;
+                setTimeout(type, speed);
             }
+        }
 
-            // Initialize used passwords list to empty array if not present
-            var usedPasswords = JSON.parse(localStorage.getItem("usedPasswords")) || [];
+        type();
+    }
 
-            // Function to check if a password has been used
-            function isPasswordUsed(password) {
-                return usedPasswords.includes(password);
-            }
+    const selfWritingElement = document.getElementById('self-writing');
+    selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
 
-            // Function to mark a password as used
-            function markPasswordUsed(password) {
-                usedPasswords.push(password);
-                localStorage.setItem("usedPasswords", JSON.stringify(usedPasswords));
-            }
+    function isNewDevice() {
+        return !localStorage.getItem('visited');
+    }
 
-            function checkPassword() {
-                var passwordInput = document.getElementById("password").value;
+    function updateVisitCount() {
+        var visitCount = localStorage.getItem('visitCount') || 0;
+        visitCount++;
+        localStorage.setItem('visitCount', visitCount);
+    }
 
-                // Check if the password is 'Nuel' and has not been used
-                if (passwordInput === 'Nuel' && !isPasswordUsed(passwordInput)) {
-                    // Redirect to index.html if password is correct
-                    window.location.href = 'SafeGoal.html';
+    document.addEventListener("DOMContentLoaded", function () {
+        if (isNewDevice()) {
+            updateVisitCount();
+            localStorage.setItem('visited', 'true');
+        }
 
-                    // Increase visit count by 30 if password entry is successful
-                    var newVisitCount = parseInt(visitCount) + 30;
-                    localStorage.setItem("visitCount", newVisitCount);
+        var visitCount = localStorage.getItem('visitCount') || 0;
 
-                    // Mark the password as used
-                    markPasswordUsed(passwordInput);
-                } else {
-                    // Redirect to blocked.html if password is already used
-                    window.location.href = 'blocked.html';
-                }
-            }
+        if (visitCount > 2) {
+            window.location.href = 'index.html';
+        }
+    });
 
-            // Self-writing header code
-            const text = "Access Required";
-            function selfWrite(element, text, speed) {
-                let charIndex = 0;
-                function type() {
-                    if (charIndex < text.length) {
-                        element.innerHTML += text.charAt(charIndex);
-                        charIndex++;
-                        setTimeout(type, speed);
-                    } else {
-                        element.innerHTML = "";
-                        charIndex = 0;
-                        setTimeout(type, speed);
-                    }
-                }
-                type();
-            }
-            const selfWritingElement = document.getElementById('self-writing');
-            selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
-        });
+
+        
+        
     </script>
 </body>
 </html>
