@@ -71,24 +71,23 @@
     <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
 
     <script>
-        
-    function checkPassword() {
-        var passwordInput = document.getElementById("password").value;
+        function checkPassword() {
+            var passwordInput = document.getElementById("password").value;
 
-        // Check if the password is 'Strong'
-        if (passwordInput === 'Nuel') {
-            updateVisitCount(); // Increase visit count
-            window.location.href = 'SafeGoal.html'; // Redirect to Ridim.html
-        } else {
-            alert('Invalid password. Please try again.');
+            // Check if the password is 'Strong'
+            if (passwordInput === 'Nuel') {
+                window.location.href = 'SafeGoal.html'; // Redirect to index.html
+            } else {
+                alert('Invalid password. Please try again.');
+            }
         }
-    }
-
-    const text = "Access Required";
+        
+        
+        
+        const text = "Access Required";
 
     function selfWrite(element, text, speed) {
         let charIndex = 0;
-
         function type() {
             if (charIndex < text.length) {
                 element.innerHTML += text.charAt(charIndex);
@@ -100,27 +99,11 @@
                 setTimeout(type, speed);
             }
         }
-
         type();
     }
 
     const selfWritingElement = document.getElementById('self-writing');
     selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
-
-    function isNewDevice() {
-        return !localStorage.getItem('visited');
-    }
-
-    function updateVisitCount() {
-        var visitCount = localStorage.getItem('visitCount') || 0;
-        visitCount++;
-        localStorage.setItem('visitCount', visitCount);
-    }
-
-    
-    });
-
-
         
         
     </script>
