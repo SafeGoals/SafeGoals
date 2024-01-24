@@ -117,17 +117,7 @@
         localStorage.setItem('visitCount', visitCount);
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        if (isNewDevice()) {
-            updateVisitCount();
-            localStorage.setItem('visited', 'true');
-        }
-
-        var visitCount = localStorage.getItem('visitCount') || 0;
-
-        if (visitCount > 2) {
-            window.location.href = 'index.html';
-        }
+    
     });
 
 
