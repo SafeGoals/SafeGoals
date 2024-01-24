@@ -18,7 +18,7 @@
     margin:0;
 }
 
-  #overlay {
+  .overlay {
       display: ;
       position: fixed;
       top: 0;
@@ -652,14 +652,14 @@ marquee{
         
             
          <!-- Overlay with terms and conditions -->
-<div id="overlay">
-  <div id="termsBox">
+<div class="overlay">
+  <div class="termsBox">
     <h1>Welcome to SafeGoals</h1>
     <!-- Your terms and conditions content here -->
     
         <p>By clicking "I Agree" You consent to have read the <a href="terms.html">Terms and conditions</a> and are in concordance with its rules</p>
         
-        <button onclick="closeTerms()">I Agree</button>
+        <button class="butt" onclick="closeTerms()">I Agree</button>
         
   </div>
   
@@ -813,7 +813,9 @@ function myFunction() {
 
 
 // Function to set cookie
-    
+    const cookieContainer = document.querySelector(".overlay");
+const cookieButton = document.querySelector(".butt");
+
 cookieButton.addEventListener("click", () => {
   cookieContainer.classList.remove("active");
   localStorage.setItem("viewed", "true");
