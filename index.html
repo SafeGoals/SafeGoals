@@ -68,53 +68,14 @@
         <input type="password" id="password" name="password" required>
         <button type="button" onclick="checkPassword()">Login</button>
     </form>
-    <p><a href="#" id="forgotPassword">Request Password</a></p>
+    <p><a href="#" id="forgotPassword">Forgot Password?</a></p>
 
     <script>
-        function checkPassword() {
-            var passwordInput = document.getElementById("password").value;
-
-            // Check if the password is 'Strong'
-            if (passwordInput === 'Nuel') {
-                window.location.href = 'Ridim.html'; // Redirect to index.html
-            } else {
-                alert('Invalid password. Please try again.');
-            }
-        }
-        
-        
-        
-        const text = "Access Required";
-
-    function selfWrite(element, text, speed) {
-        let charIndex = 0;
-        function type() {
-            if (charIndex < text.length) {
-                element.innerHTML += text.charAt(charIndex);
-                charIndex++;
-                setTimeout(type, speed);
-            } else {
-                element.innerHTML = "";
-                charIndex = 0;
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
-
-    const selfWritingElement = document.getElementById('self-writing');
-    selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
-        
-        
-        
-        
-     //password entry   
-        
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize visit count to 0 if not present
             var visitCount = localStorage.getItem("visitCount");
             if (!visitCount) {
-                localStorage.setItem("visitCount", 20);
+                localStorage.setItem("visitCount", 0);
             }
 
             // Initialize used passwords list to empty array if not present
@@ -135,12 +96,12 @@
                 var passwordInput = document.getElementById("password").value;
 
                 // Check if the password is 'Nuel' and has not been used
-                if (passwordInput === 'Nuel','Nagato' && !isPasswordUsed(passwordInput)) {
+                if (passwordInput === 'Nuel' && !isPasswordUsed(passwordInput)) {
                     // Redirect to index.html if password is correct
-                    window.location.href = 'SafeGoal.html';
+                    window.location.href = 'index.html';
 
-                    // Increase visit count by 10
-                    var newVisitCount = parseInt(visitCount) + 10;
+                    // Increase visit count by 30 if password entry is successful
+                    var newVisitCount = parseInt(visitCount) + 30;
                     localStorage.setItem("visitCount", newVisitCount);
 
                     // Mark the password as used
@@ -151,22 +112,26 @@
                 }
             }
 
-            // Your existing self-writing code
+            // Self-writing header code
             const text = "Access Required";
             function selfWrite(element, text, speed) {
-                // ... (unchanged)
+                let charIndex = 0;
+                function type() {
+                    if (charIndex < text.length) {
+                        element.innerHTML += text.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(type, speed);
+                    } else {
+                        element.innerHTML = "";
+                        charIndex = 0;
+                        setTimeout(type, speed);
+                    }
+                }
+                type();
             }
             const selfWritingElement = document.getElementById('self-writing');
             selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
         });
-        
-        
-        
-        
-        
-        
-        
-        
     </script>
 </body>
 </html>
