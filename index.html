@@ -176,6 +176,47 @@ setTimeout(() => {
 
 
 
+//visit
+document.addEventListener("DOMContentLoaded", function () {
+    const visitLimit = 30; // Total number of visits allowed after successful login
+    const visitDuration = 30 * 24 * 60 * 60 * 1000; // Duration of 30 days in milliseconds
+    const storageKey = 'websiteVisit';
+
+    // Function to handle the login button click
+    function handleLogin() {
+        var passwordInput = document.getElementById("password").value;
+
+        // Check if the password is correct
+        if (passwordInput === 'Nuel') {
+            let userVisitData = JSON.parse(localStorage.getItem(storageKey)) || { count: 0, firstVisitTime: Date.now() };
+
+            // Check if 30 days have passed since the visit count increase
+            if (Date.now() - userVisitData.firstVisitTime > visitDuration) {
+                // Reset visit count and update the first visit time
+                userVisitData.count = 0;
+                userVisitData.firstVisitTime = Date.now();
+            }
+
+            // Increment the visit count for the current visit
+            userVisitData.count++;
+
+            // Save the updated visit data to localStorage
+            localStorage.setItem(storageKey, JSON.stringify(userVisitData));
+
+            // Check if the user has exceeded the visit limit
+            if (userVisitData.count > visitLimit) {
+                window.location.href = 'SafeGoal.html'; // Redirect back to SafeGoal.html
+            } else {
+                alert('Login successful! Visit count: ' + userVisitData.count);
+            }
+        } else {
+            alert('Invalid password. Please try again.');
+        }
+    }
+
+    // Attach the handleLogin function to the login button click event
+    document.getElementById("loginButton").addEventListener("click", handleLogin);
+});
 
 
 
