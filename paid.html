@@ -40,4 +40,16 @@
     <h3>Redirecting...</h3>
     
 </body>
+
+<script>
+    setTimeout(function() {
+            var referrer = document.referrer;
+            if (referrer.includes("pay.html")) {
+                window.location.href = "safe.html";
+            } else {
+                window.location.href = "index.html";
+            }
+        }, 2000);
+    
+</script>
 </html>
