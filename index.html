@@ -3,224 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Subscription Page</title>
     <style>
         body {
-            background-color: #000033; /* Dark shade background */
-            color: #ecf0f1;
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
-
-  .cookie-container {
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  right: 0;
-  background: #2f3640;
-  color: #f5f6fa;
-  padding: 0 32px;
-  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
-
-  transition: 400ms;
-}
-
-
-.cookie-container.active {
-  bottom: 0;
-}
-
-.cookie-container a {
-  color: #f5f6fa;
-}
-
-.cookie-btn {
-  background: #e84118;
-  border: 0;
-  color: #f5f6fa;
-  padding: 12px 48px;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-
-
-            
-        header {
+        h2 {
             text-align: center;
-            padding: 20px;
-            background-color: #3498db; /* Sky-blue header */
-            width: 100%;
+            color: #333;
         }
-        form {
-            width: 100%;
-            max-width: 300px;
-            margin: 20px;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+
+        p {
+            margin-bottom: 20px;
+            color: #666;
         }
-        label {
+
+        .note {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .opt-in-button,
+        .free-trial-button {
             display: block;
-            margin-bottom: 8px;
-        }
-        input {
-            width: 260px;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #3498db; /* Sky-blue button */
-            color: #ecf0f1;
-            padding: 10px;
             width: 100%;
+            padding: 10px;
+            margin-top: 20px;
             border: none;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        a {
-            color: #3498db;
-            text-decoration: none;
+        
+        .opt-in-button a,.free-trial-button a{
+            color:white;
+            text-decoration:none;
         }
-        a:hover {
-            text-decoration: underline;
+        
+        
+        
+        
+        
+
+        .opt-in-button {
+            background-color: green;
+            color: #fff;
         }
+
+        .opt-in-button:hover {
+            background-color: #007d00;
+        }
+
+        .free-trial-button {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .free-trial-button:hover {
+            background-color: #0056b3;
+        }
+        
+        
+        
+        
+        
+        
+        
     </style>
 </head>
 <body>
-    <header>
-        <h1 id="self-writing"></h1>
-    </header>
-    <form id="loginForm">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="button" onclick="checkPassword()">Login</button>
-    </form>
-    <p><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passwoed%20for%20SafeGoal" target="_blank" id="forgotPassword">Request Password <i>(Costs ₦50 for 30days)</i> </a></p>
-    <p><a href="paid.html"> pay </a> </p>
-<div class="cookie-container">
-  <div class="termsBox">
-    <h1>Welcome to SafeGoals</h1>
-    <!-- Your terms and conditions content here -->
-    
-        <p>By clicking "I Agree" You consent to have read the <a href="terms.html">Terms and conditions</a> and are in concordance with its rules</p>
-        
-        <button class="cookie-btn"">I Agree</button>
-        
-  </div>
-  
-</div>
-
-    
-    <script>
-        function checkPassword() {
-            var passwordInput = document.getElementById("password").value;
-
-            // Check if the password is 'Strong'
-            if (passwordInput === 'Nuel') {
-                window.location.href = 'SafeGoal.html'; // Redirect to index.html
-            } else {
-                alert('Invalid password. Please try again.');
-            }
-        }
-        
-        
-        
-        const text = "Access Required";
-
-    function selfWrite(element, text, speed) {
-        let charIndex = 0;
-        function type() {
-            if (charIndex < text.length) {
-                element.innerHTML += text.charAt(charIndex);
-                charIndex++;
-                setTimeout(type, speed);
-            } else {
-                element.innerHTML = "";
-                charIndex = 0;
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
-
-    const selfWritingElement = document.getElementById('self-writing');
-    selfWrite(selfWritingElement, text, 150); // Adjust speed as needed
-        
-
-
-// Function to set cookie
-    const cookieContainer = document.querySelector(".cookie-container");
-const cookieButton = document.querySelector(".cookie-btn");
-
-cookieButton.addEventListener("click", () => {
-  cookieContainer.classList.remove("active");
-  localStorage.setItem("cookieBannerDisplayed", "true");
-});
-
-setTimeout(() => {
-  if (!localStorage.getItem("cookieBannerDisplayed")) {
-    cookieContainer.classList.add("active");
-  }
-}, 2000);
-
-
-
-//visit
-document.addEventListener("DOMContentLoaded", function () {
-    const visitLimit = 30; // Total number of visits allowed after successful login
-    const visitDuration = 30 * 24 * 60 * 60 * 1000; // Duration of 30 days in milliseconds
-    const storageKey = 'websiteVisit';
-
-    // Function to handle the login button click
-    function handleLogin() {
-        var passwordInput = document.getElementById("password").value;
-
-        // Check if the password is correct
-        if (passwordInput === 'Nuel') {
-            let userVisitData = JSON.parse(localStorage.getItem(storageKey)) || { count: 0, firstVisitTime: Date.now() };
-
-            // Check if 30 days have passed since the visit count increase
-            if (Date.now() - userVisitData.firstVisitTime > visitDuration) {
-                // Reset visit count and update the first visit time
-                userVisitData.count = 0;
-                userVisitData.firstVisitTime = Date.now();
-            }
-
-            // Increment the visit count for the current visit
-            userVisitData.count++;
-
-            // Save the updated visit data to localStorage
-            localStorage.setItem(storageKey, JSON.stringify(userVisitData));
-
-            // Check if the user has exceeded the visit limit
-            if (userVisitData.count > visitLimit) {
-                window.location.href = 'SafeGoal.html'; // Redirect back to SafeGoal.html
-            } else {
-                alert('Login successful! Visit count: ' + userVisitData.count);
-            }
-        } else {
-            alert('Invalid password. Please try again.');
-        }
-    }
-
-    // Attach the handleLogin function to the login button click event
-    document.getElementById("loginButton").addEventListener("click", handleLogin);
-});
-
-
-
-        
-    </script>
+    <div class="container">
+        <h2>SafeGoals Subscription Plan</h2>
+        <p>Get exclusive access to our premium content for just ₦100 for 60 days!</p>
+        <p><strong>Details:</strong></p>
+        <ul>
+            <li>Unlimited access to all available games </li>
+            <li>Best user experience</li>
+            <li>Exclusive offers and discounts</li>
+        </ul>
+        <p class="note">Note: Your subscription won't automatically renew after 60 days. You can renew anytime.</p>
+       
+        <button class="opt-in-button"><a href="https://paystack.com/pay/xz8-3a5vp-"> Opt In Now </a></button>
+        <button class="free-trial-button"><a href="https://nozel-silva.github.io/Banza/SafeGoal.html" > Start Free Trial</a></a></button>
+    </div>
 </body>
 </html>
