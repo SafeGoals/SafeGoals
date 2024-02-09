@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -430,6 +430,119 @@ marquee{
 
 
 
+
+
+
+
+    
+
+
+.check-sign {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: green;
+            display: flex;
+            margin-left:135px;
+        }
+
+        .check {
+            width: 20%;
+            height: 50%;
+            background-color: transparent;
+            border: 2px solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(40deg);
+            margin-left:135px;
+            
+        }
+        
+    @media(min-width: 500px){
+        .sucessful{
+            
+        padding: 20px;
+        text-align: center;
+        width:;
+        margin-right:200px ;
+        margin-left: 200px;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: 4px 4px 9px 9px grey;
+    }
+    
+    .sucessful button{
+        background-color: skyblue;
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    }
+
+
+    .sucessful{
+        display:none;
+        padding: 20px;
+        text-align: center;
+        width:auto;
+        justify-content: center;
+   border-radius: 5px;
+        box-shadow:  5px 5px 9px 9px grey;
+        margin-top:50px;
+        
+
+    }
+
+
+h2{
+        color: green;
+    }
+
+
+    .sucessful button{
+        background-color: skyblue;
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+
+
+
+.first{
+        display:none;
+        padding: 20px;
+        text-align: center;
+        width:auto;
+        justify-content: center;
+   border-radius: 5px;
+        box-shadow:  4px 4px 7px 7px grey;
+        margin-top:50px;
+
+    }
+
+
+h2{
+        color: green;
+    }
+
+
+    .first button{
+        background-color: skyblue;
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
   </style>
 </head>
 <body onload=" showForm('column1-form', 'column1')">
@@ -485,6 +598,23 @@ marquee{
 
 
 
+<div class="sucessful" id"successfulDiv">
+
+    <h2>subcription sucessful</h2>
+    <h4><i>+ 60 days</i> added</h4>
+    <p>You can now use SafeGoals for the next 60 days</p>
+    <button onclick="closePopup()" class="btn btn-primary"    >Close</button>
+</div>
+
+
+
+<div class="first" id="firstDiv">
+
+    <h2>You are on Free Trial!</h2>
+    <h4><i>+ 1 day</i> added</h4>
+    <p>You can only use SafeGoals for the next 24hrs</p>
+    <button onclick="closePopup()" class="btn btn-primary"    >Close</button>
+</div>
 
 
 
@@ -1163,8 +1293,7 @@ marquee{
         
   <script >
   
-  
-    function toggleDropdown(sectionId) {
+   function toggleDropdown(sectionId) {
       var dropdownContent = document.getElementById(sectionId);
       if (dropdownContent.style.display === "block") {
         dropdownContent.style.display = "none";
@@ -1276,44 +1405,54 @@ setTimeout(() => {
 
 
 //free trial
-document.addEventListener("DOMContentLoaded", function () {
-    const cookieButton = document.querySelector('.cookie-btn');
-
-    cookieButton.addEventListener('click', function () {
-        alert("You're on a free trial!.");
-    });
-});
 
 
 
+    
+    // Check if redirected from paid.html
 
-//visit
+    // Check if redirected from paid.html
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectedFromPaid = urlParams.get('redirectedFrom') === 'paid';
 
-    document.addEventListener("DOMContentLoaded", function () {
-    const visitLimit = 2; // Total number of visits allowed
-    const visitDuration = 60 * 1000; // Duration of one minute in milliseconds
-    const storageKey = 'websiteVisit';
-
-    let userVisitData = JSON.parse(localStorage.getItem(storageKey)) || { count: 0, firstVisitTime: Date.now() };
-
-    // Check if a minute has passed since the first visit
-    if (Date.now() - userVisitData.firstVisitTime > visitDuration) {
-        // Reset visit count and update the first visit time
-        userVisitData.count = 0;
-        userVisitData.firstVisitTime = Date.now();
+    if (redirectedFromPaid) {
+        setTimeout(function() {
+            document.getElementById('successfulDiv').style.display = 'block';
+            // Increase visit count by 60 days
+            increaseVisitCount(60);
+        }, 2000);
+    } else {
+        setTimeout(function() {
+            let visitCount = localStorage.getItem('visitCount');
+            if (!visitCount) {
+                visitCount = 0;
+            }
+            if (parseInt(visitCount) >= 1) {
+                window.location.href = 'index.html'; // Redirect to index.html
+            } else {
+                document.getElementById('firstDiv').style.display = 'block';
+                // Increase visit count by 1 day
+                increaseVisitCount(1);
+            }
+        }, 5000);
     }
 
-    // Increment the visit count for the current visit
-    userVisitData.count++;
-
-    // Save the updated visit data to localStorage
-    localStorage.setItem(storageKey, JSON.stringify(userVisitData));
-
-    // Check if the user has exceeded the visit limit
-    if (userVisitData.count > visitLimit) {
-        window.location.href = 'index.html'; // Redirect to index.html
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('successfulDiv').style.display = 'none';
+        document.getElementById('firstDiv').style.display = 'none';
     }
-});
+
+    // Function to increase visit count
+    function increaseVisitCount(days) {
+        let visitCount = localStorage.getItem('visitCount');
+        if (!visitCount) {
+            visitCount = 0;
+        }
+        visitCount = parseInt(visitCount) + days;
+        localStorage.setItem('visitCount', visitCount);
+    }
+
 
   
   </script>
