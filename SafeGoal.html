@@ -1209,8 +1209,8 @@ h2{
     
     <div id="section03" class="dropdown-content">
  
-  <p class="dropdown-header"'><b>Nozel</b>.<p>A code upgrader,  Learned in 6 major programming languages</p>
-  <p>Creator of NIT passkey sytem </p></p>
+  <p class="dropdown-header"'><b>Nuel Industries</b>.<p>A software company, specifoed mainly in the creation and upgrading of softwares</p>
+  <p>Creators of the NIT passkey sytem </p></p>
   
   </div>
   <!-- end-->
@@ -1409,50 +1409,46 @@ setTimeout(() => {
 
 
     
-    // Check if redirected from paid.html
+    //
+  // Check if localStorage supports and get the visit count
+  if (typeof(Storage) !== "undefined") {
+    var visitCount = localStorage.getItem("Here");
 
-    // Check if redirected from paid.html
-    const urlParams = new URLSearchParams(window.location.search);
-    const redirectedFromPaid = urlParams.get('redirectedFrom') === 'paid';
-
-    if (redirectedFromPaid) {
-        setTimeout(function() {
-            document.getElementById('successfulDiv').style.display = 'block';
-            // Increase visit count by 60 days
-            increaseVisitCount(60);
-        }, 2000);
+    // Check if user is visiting for the first time
+    if (visitCount === null) {
+      // Set visit count to 1 and alert the user
+      localStorage.setItem("Here", 1);
+      alert("You are on a free trial.");
     } else {
-        setTimeout(function() {
-            let visitCount = localStorage.getItem('visitCount');
-            if (!visitCount) {
-                visitCount = 0;
-            }
-            if (parseInt(visitCount) >= 1) {
-                window.location.href = 'index.html'; // Redirect to index.html
-            } else {
-                document.getElementById('firstDiv').style.display = 'block';
-                // Increase visit count by 1 day
-                increaseVisitCount(1);
-            }
-        }, 5000);
+      // Get the date when the user first visited the website
+      var firstVisitDate = new Date(localStorage.getItem("firstVisitDate"));
+      var currentDate = new Date();
+
+      // Calculate the difference in days
+      var timeDifference = currentDate.getTime() - firstVisitDate.getTime();
+      var daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+      // Check if user is coming from paid.html
+      if (document.referrer.includes("paid.html")) {
+        // Increment the time to 60 days and alert the user
+        var newDuration = parseInt(visitCount) + 60;
+        localStorage.setItem("Here", newDuration);
+        alert("+60 days added.");
+        // Replace the current page in the browser history to prevent going back to paid.html
+        history.replaceState(null, "", "index.html");
+      } else if (daysDifference > 1) {
+        // Redirect to index.html if time has elapsed
+        window.location.href = "index.html";
+      }
     }
 
-    // Function to close the popup
-    function closePopup() {
-        document.getElementById('successfulDiv').style.display = 'none';
-        document.getElementById('firstDiv').style.display = 'none';
+    // Set the first visit date if it's the first time visiting
+    if (visitCount === null) {
+      localStorage.setItem("firstVisitDate", new Date());
     }
-
-    // Function to increase visit count
-    function increaseVisitCount(days) {
-        let visitCount = localStorage.getItem('visitCount');
-        if (!visitCount) {
-            visitCount = 0;
-        }
-        visitCount = parseInt(visitCount) + days;
-        localStorage.setItem('visitCount', visitCount);
-    }
-
+  } else {
+    alert("Sorry, your browser does not support web storage. Please upgrade your browser.");
+  }
 
   
   </script>
