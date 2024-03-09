@@ -117,47 +117,4 @@ setTimeout(() => {
     
     
   // Check if localStorage supports and get the visit count
-  if (typeof(Storage) !== "undefined") {
-    var visitCount = localStorage.getItem("Here");
-
-    // Check if user is visiting for the first time
-    if (visitCount === null) {
-      // Set visit count to 1 and alert the user after 2 seconds
-      localStorage.setItem("Here", 1);
-      setTimeout(function() {
-        alert("You are on a free trial.");
-      }, 2000);
-    } else {
-      // Get the date when the user first visited the website
-      var firstVisitDate = new Date(localStorage.getItem("firstVisitDate"));
-      var currentDate = new Date();
-
-      // Calculate the difference in days
-      var timeDifference = currentDate.getTime() - firstVisitDate.getTime();
-      var daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-      // Check if user is coming from paid.html
-      if (document.referrer.includes("paid.html")) {
-        // Increment the time to 60 days and alert the user after 2 seconds
-        var newDuration = parseInt(visitCount) + 60;
-        localStorage.setItem("Here", newDuration);
-        setTimeout(function() {
-          alert("+60 days added.");
-        }, 2000);
-        // Replace the current page in the browser history to prevent going back to paid.html
-        history.replaceState(null, "", "index.html");
-      } else if (daysDifference > 1) {
-        // Redirect to index.html if time has elapsed
-        window.location.href = "index.html";
-      }
-    }
-
-    // Set the first visit date if it's the first time visiting
-    if (visitCount === null) {
-      localStorage.setItem("firstVisitDate", new Date());
-    }
-  } else {
-    alert("Sorry, your browser does not support web storage. Please upgrade your browser.");
-  }
-
   
