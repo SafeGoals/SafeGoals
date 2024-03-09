@@ -559,6 +559,29 @@ h2{
 
 
 
+   #video-bg {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+        }
+
+        /* Optional: Add additional styling for content overlay */
+        .content {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            z-index: 1;
+     }
+
+
 
 
 
@@ -585,13 +608,6 @@ h2{
 
 
 
-
-
-
-<div class ="form-container" id="column1-form">
-
-
-<div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>  <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b></div>
     
     <div class="slider-container">
     
@@ -617,6 +633,19 @@ h2{
     </div>
     
 
+
+<div class ="form-container" id="column1-form">
+
+
+<div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>  <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b></div>
+
+
+<video autoplay loop muted id="video-bg">
+        <source src="Haaland.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+</video>
+
+ 
 
 
 <div class="sucessful" id"successfulDiv">
