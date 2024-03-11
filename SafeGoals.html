@@ -568,6 +568,52 @@ h2{
     margin-bottom:30px
         }
 
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 7px;
+    width: 100%;
+  
+  }
+
+.main-banner .caption h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 64px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.main-banner .caption h2 em {
+  font-style: normal;
+  color: #f5a425;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 1180px) {
+
+  
+
+  .main-banner .caption h2 {
+    font-size: 58px;
+  }
+
+}
+@media screen and (max-width: 767px) {
+
+
+  .main-banner .caption h2 {
+    font-size: 36px;
+  }
+
+}
+
+
+
+   
         /* Optional: Add additional styling for content overlay */
         .content {
             position: absolute;
@@ -638,10 +684,19 @@ h2{
 <div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>  <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b></div>
 
 
+  <section class="section main-banner" id="top" data-section="section1">
 <video autoplay loop muted id="video-bg">
-        <source src="Haaland.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+  <source src="img/Haaland.mp4" type="">
+    your browser does not support this content
 </video>
+<div class="video-overlay header-text">
+          <div class="caption">
+              <h6> </h6>
+              <h2>Never Lose a <em>Game</em></h2>
+
+          </div>
+      </div>
+    </section>
 
  
 
