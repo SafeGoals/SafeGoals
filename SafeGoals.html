@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,11 +8,11 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
-  <title>Safe<strong>Goals<strong></title>
+  <title>SafeGoals</title>
   <style>
   
   body {
-    background-color:white;
+    background:linear-gradient(to bottom, white, lightgreen,grey, black) ;
     color:grey;
     font-size:8px;
     margin:0;
@@ -26,37 +26,52 @@
     padding:10px;
     margin-bottom:15px;
 } 
-    .cookie-container {
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  right: 0;
-  background: #2f3640;
-  color: #f5f6fa;
-  padding: 0 32px;
-  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
-
-  transition: 400ms;
+    
+/* slider */
+.slideshow-container {
+  position: relative;
+  max-width: 90%;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
-.cookie-container.active {
-  bottom: 0;
+.slide {
+  display: none;
 }
+
+img {
+  width: 100%;
+  height: 200px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+
+/*end*/
 
 .cookie-container a {
   color: #f5f6fa;
 }
 
-.cookie-btn {
-  background: #e84118;
-  border: 0;
-  color: #f5f6fa;
-  padding: 12px 48px;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
+
 
 
 
@@ -67,12 +82,15 @@
      }
    
 #H{
-    background-color:green;
+    background-color:lightgreen;
 }
 #A{
-    background-color:green;
+    background-color:lightgreen;
 }
 
+#gamesContent{
+  background:linear-gradient(to bottom, white, lightgreen,grey, black) ;
+}
 
 table {
 clear:both;
@@ -110,11 +128,19 @@ font-size:18px;
     }
 
 .safe{
-    background-color:grey;
+background-color: #333;
     padding:10px;
     color:white;
     font-size:19px;
     
+    
+}
+
+.safe input{
+    font-size:13px;
+    text-align:left ;
+    float:right;
+    margin-bottom:10px;
     
 }
 .side{
@@ -125,13 +151,9 @@ font-size:18px;
     padding:5px;
     
 }
-.safe input{
-    font-size:13px;
-    text-align:left ;
-    float:right;
-    margin-bottom:10px;
-    
-}
+
+
+
 footer{
     height:350px;
     width:100%;
@@ -172,9 +194,15 @@ padding-top:8px;
     padding:5px;
     
 }
-.dropdown-header{
-    color:white;
-}
+
+.dropdown-content {
+      display: none;
+    }
+
+    .dropdown-header {
+      cursor: pointer;
+    }
+
 .form-container{
 display:none;
 padding-bottom:80px;
@@ -226,164 +254,12 @@ margin-right:0;
         }
 
 
-
-
-
-
-.slider-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            touch-action: pan-y;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease;
-            transform: translateX(0);
-            
-        }
-
-        .slide {
-            width: 300px;
-            height: 10px;
-            background-image: url("22.jpeg");
-            object-fit:cover;
-            margin-right: 20px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            touch-action: pan-x;
-            color:grey;
-        }
-#slide2 {
-            width: 300px;
-            height: 10px;
-            background-image: url("f1.jpg");
-            object-fit:cover;
-            margin-right: 20px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            touch-action: pan-x;
-            color:grey;
-        }
-        
-        
-     #slide3 {
-            width: 300px;
-            height: 10ppx;
-            background-image: url("f3.jpg");
-            object-fit:cover;
-            margin-right: 20px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            touch-action: pan-x;
-            color:grey;
-        }   
-        
-        
-        
-        
-        #slide4 {
-            width: 300px;
-            height: 10ppx;
-            background-image: url("f2.jpg");
-            object-fit:cover;
-            margin-right: 20px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            touch-action: pan-x;
-            color:grey;
-        }
-        
-        
-        
-        
-        
-
-
-
-
-
-        
-        .slide h2 {
-            font-size: 24px;
-            text-align:center ;
-            color:white;
-        }
-
-        .controls {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .control-button {
-            background-color: #444;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-        
-        
-   .fx{
-       position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #000;
-      display: flex;
-      justify-content: space-around;
-      padding:6px;
-     font-size:15px;
-      color:whitemilk;
-      padding-bottom:1px;
-   } 
-.fx p{
-    color:whitemilk;
-    text-decoration:none;
-    font-size:10px;
-        }
-        .fx i{
-            font-size:18px;
-            color:;
-        }
-        #column1:hover{
-            color:lightgreen;
-        }
-        #column2:hover{
-            color:lightgreen;
-        }
-        #column3:hover{
-            color:lightgreen;
-        }
-        
-        
-
-    
-
-
  
   h1{
       text-align:center;
       margin-top:30px;
   }
-    .dropdown-content {
-      display: none;
-    }
-
-    .dropdown-header {
-      cursor: pointer;
-    }
-    
+   
     
     h2{
     background-color: ;
@@ -438,24 +314,9 @@ tr{
 overflow:scroll;
     padding:9px;
 }
-
-
-
-
-
   .safe a{
       color:lightgreen;
     }
-
-
-
-
-
-
-
-
-    
-
 
 .check-sign {
             width: 40px;
@@ -477,71 +338,7 @@ overflow:scroll;
             
         }
         
-    @media(min-width: 500px){
-        .sucessful{
-            
-        padding: 20px;
-        text-align: center;
-        width:;
-        margin-right:200px ;
-        margin-left: 200px;
-        justify-content: center;
-        border-radius: 5px;
-        box-shadow: 4px 4px 9px 9px grey;
-    }
     
-    .sucessful button{
-        background-color: skyblue;
-        color: white;
-        border-radius: 10px;
-        padding: 5px;
-    }
-
-    }
-
-
-    .sucessful{
-        display:none;
-        padding: 20px;
-        text-align: center;
-        width:auto;
-        justify-content: center;
-        border-radius: 5px;
-        box-shadow:  5px 5px 9px 9px grey;
-        margin-top:50px;
-        
-
-    }
-
-
-h2{
-        color: green;
-    }
-
-
-    .sucessful button{
-        background-color: skyblue;
-        color: white;
-        border-radius: 10px;
-        padding: 5px;
-    }
-
-
-
-
-.first{
-        display:none;
-        padding: 20px;
-        text-align: center;
-        width:auto;
-        justify-content: center;
-   border-radius: 5px;
-        box-shadow:  4px 4px 7px 7px grey;
-        margin-top:50px;
-
-    }
-
-
 h2{
         color: green;
     }
@@ -561,9 +358,10 @@ h2{
             position: relative;
             object-fit:cover;
             width: 100%;
-            height: 100vh;
+            height: 50vh;
             z-index: -1;
-    margin-bottom:30px
+    background-color: black;
+
         }
 
   .video-overlay {
@@ -588,7 +386,7 @@ main-banner .caption {
 .main-banner .caption h2 {
   margin-top: 30px;
   margin-bottom: 30px;
-  font-size: 64px;
+  font-size: 40px;
   text-transform: uppercase;
   font-weight: 800;
   color: #fff;
@@ -626,77 +424,96 @@ main-banner .caption {
         
 
 
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  .menu-item {
+    color: grey;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size:20px;
+  }
+  .active {
+    color: lightgreen;
+  }
+  .content {
+    display: none;
+   
+  }
+  .content.active {
+    display: block;
+  }
 
-
+.talkk p{
+  color: black;
+  font-size: 30px;
+  padding: 10px;
+  margin: 10px;
+}
+.talkk h2{
+  text-align: unset;
+    padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+}
+.talkk li{
+    padding: 10px;
+  margin: 10px;
+  color: black;
+font-size: 14px;
+}
 
 
 
   </style>
+
 </head>
 <body onload=" showForm('column1-form', 'column1')">
 
-
-    <!--
-    <div class="controls">
-        <button class="control-button" onclick="prevSlide()"><</button>
-        <button class="control-button" onclick="nextSlide()">></button>
-    </div>
-        
-        -->
-        
-        
-
-
-
-
-
-
-    
-    <div class="slider-container">
-    
-        
-        
-
-    </div>
-    
-
-
-<div class ="form-container" id="column1-form">
+<div class="content" id="homeContent">
 
 
 <div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>  <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b></div>
 
+<div class="slideshow-container">
+  <div class="slide">
+    <img src="1710964047166.png" alt="Slide 1">
+  </div>
+  <div class="slide">
+    <img src="1710964047093.png" alt="Slide 2">
+  </div>
+  <div class="slide">
+    <img src="1710964047166.png" alt="Slide 3">
+  </div>
 
-  <section class="section main-banner" id="top" data-section="section1">
-<video autoplay loop muted id="video-bg">
-  <source src="fast.mp4" type="">
-    your browser does not support this content
-</video>
-<div class="video-overlay header-text">
-          
-      </div>
-    </section>
-
- 
-
-
-<div class="sucessful" id"successfulDiv">
-
-    <h2>subcription sucessful</h2>
-    <h4><i>+ 60 days</i> added</h4>
-    <p>You can now use SafeGoals for the next 60 days</p>
-    <button onclick="closePopup()" class="btn btn-primary"    >Close</button>
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
 </div>
 
+  
 
 
-<div class="first" id="firstDiv">
 
-    <h2>You are on Free Trial!</h2>
-    <h4><i>+ 1 day</i> added</h4>
-    <p>You can only use SafeGoals for the next 24hrs</p>
-    <button onclick="closePopup()" class="btn btn-primary"    >Close</button>
-</div>
+
+ <section class="talkk">
+   <p>Your football guide to Winning</p>
+
+   <h2>Today's Specials</h2>
+<ul>
+  <li>Liverpool vs Man Utd</li>
+</ul>
+ </section>
+
 
 
 <div class="card">
@@ -715,13 +532,6 @@ main-banner .caption {
     
 </div>
 
-
-
-
-
-
-
-
           <div class="card">
     <img src="lift.jpg" alt="Card Image "/>
           <div class="card-content">
@@ -738,13 +548,9 @@ main-banner .caption {
           
           
           
-          
-          
-          
-          
-          
-       <div class ="form-container" id="column2-form">
-<div class="safe"> <b class="h1">Safe <strong>Goals</strong>⚽</b>  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game.." title="Type in a name"></div>
+       
+       <div class="content" id="gamesContent">
+<div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Game.." title="Type in a name"></div>
     
 <h1><i class="fa fa-ball"></i>Available Games</h1>
 <div id="myUL">
@@ -754,18 +560,23 @@ main-banner .caption {
   <div id="section1" class="dropdown-content">
     <table cell-padding="12px">
         <th id="H">Home</th>
+        <th>Stats</th>
         <th id="A">Away</th>
         
         <tr>
             <td>
                 
-                    <g>Gsp: 64%</g><br />
+                    <g>64%</g><br />
                    
             
             </td>
+
+            <td>Gsp</td>
+
+
             <td>
                 
-                    <g>Gsp: 50%</g><br />
+                    <g> 50%</g><br />
                     
                 
             </td>
@@ -773,748 +584,13 @@ main-banner .caption {
         
         </tr>
         <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
+           <td colspan="3"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
         </tr>
     </table>
     
       </div>
 
  <!-- break-->
-<h2 class="dropdown-header" onclick="toggleDropdown('section2')">
-  <a> Liverpool – Luton</a></h2>
-  <div id="section2" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 61%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 20%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section3')">
-  <a> Bayern Leverkusen – Mainz </a></h2>
-  <div id="section3" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 57.13%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 38%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section4')">
-  <a> Bologna - Verona</a></h2>
-  <div id="section4" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 73%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 60%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section5')">
-  <a> Real Sociedad – Villareal </a></h2>
-  <div id="section5" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 30.79%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 48.50%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section6')">
-  <a> Metz - Lyon</a></h2>
-  <div id="section6" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 34.93%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 56.66%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section7')">
-  <a> Granada – Valencia</a></h2>
-  <div id="section7" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 40%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 36%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section8')">
-  <a> Sassuolo – Empoli</a></h2>
-  <div id="section8" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 21.84%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 36.25%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section9')">
-  <a> Bayern Monchengladbach – VfL Bochum </a></h2>
-  <div id="section9" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 26%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 39%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section10')">
-  <a> Stuttgart – Cologne</a></h2>
-  <div id="section10" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 62.73%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 33.16%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section11')">
-  <a> Union Berlin – Heidenheim</a></h2>
-  <div id="section11" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 73.5%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 40%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section12')">
-  <a> Werder Bremen - Darmstadt</a></h2>
-  <div id="section12" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 73.34%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 12.75%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section13')">
-  <a> Aston Villa – Nottingham Forest</a></h2>
-  <div id="section13" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 51.82%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 51.28%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section14')">
-  <a> Brighton – Everton </a></h2>
-  <div id="section14" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 35.55%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 41.82%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section15')">
-  <a> Crystal Palace – Burnley</a></h2>
-  <div id="section15" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 21.84%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 31.50%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section16')">
-  <a> Manchester United – Fulham </a></h2>
-  <div id="section16" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 81.25%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 54%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section17')">
-  <a> Barcelona - Getafe</a></h2>
-  <div id="section17" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 83.50%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 66.50%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-<h2 class="dropdown-header" onclick="toggleDropdown('section18')">
-  <a> Lorient - Nantes</a></h2>
-  <div id="section18" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 64.75%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 33.50%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section19')">
-  <a> Salernitana - Monza</a></h2>
-  <div id="section19" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 53.90%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 39%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section20')">
-  <a> Bournemouth – Manchester City</a></h2>
-  <div id="section20" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 32.50%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 54.61%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section21')">
-  <a> Alaves – Mallorca</a></h2>
-  <div id="section21" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 59.84%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 26%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section22')">
-  <a> Bayern Munich - Leipzig</a></h2>
-  <div id="section22" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 25.55%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 48.50%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section23')">
-  <a> Genoa - Udinese</a></h2>
-  <div id="section23" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 43.16%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 29%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section24')">
-  <a> Arsenal - Newcastle</a></h2>
-  <div id="section24" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 75%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 36.50%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section25')">
-  <a> Almeria - Athletico</a></h2>
-  <div id="section25" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 23.16%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 34.61%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
-<h2 class="dropdown-header" onclick="toggleDropdown('section26')">
-  <a> Strasbourg - Brest</a></h2>
-  <div id="section26" class="dropdown-content">
-    <table cell-padding="12px">
-        <th id="H">Home</th>
-        <th id="A">Away</th>
-        
-        <tr>
-            <td>
-                
-                    <g>Gsp: 38.5%</g><br />
-                   
-            
-            </td>
-            <td>
-                
-                    <g>Gsp: 40%</g><br />
-                    
-                
-            </td>
-            
-        
-        </tr>
-        <tr>
-           <td colspan="2"> <label>Expected Goals:</label> 0.5 - 1.5</td> 
-        </tr>
-    </table>
-    
-      </div>
-
 
 
 
@@ -1522,9 +598,9 @@ main-banner .caption {
           
         </div>  
           
-            <div class ="form-container" id="column3-form">
+            <div class="content" id="profileContent">
           
-<div class="safe"> <b class="h1">Safe <strong>Goal</strong>⚽</b>   <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b> </div>
+<div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>   <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b> </div>
 
 
 <div class="card" id="faq">
@@ -1537,7 +613,7 @@ main-banner .caption {
     
     <div id="section0" class="dropdown-content">
  
-  <p class="dropdown-header"'>Safegoal uses an algorithm that predicts a teams scoring probality expressed in terms of percentage. it is only 97% accurate if you properly follow the figures<p>This therefore serves as a guide in placing bets on goals</p>
+  <p class="dropdown-header">Safegoal uses an algorithm that predicts a teams scoring probality expressed in terms of percentage. it is only 97% accurate if you properly follow the figures<p>This therefore serves as a guide in placing bets on goals</p>
   </p>
   
   </div>
@@ -1550,7 +626,7 @@ main-banner .caption {
     
     <div id="section02" class="dropdown-content">
  
-  <p class="dropdown-header"'>Each team has a gsp, place your bets base on which team has a higher one if you plan to bet one just a teams' goal.<p>GSp > 50% but less than 60% could indicate a single goal</p>
+  <p class="dropdown-header">Each team has a gsp, place your bets base on which team has a higher one if you plan to bet one just a teams' goal.<p>GSp > 50% but less than 60% could indicate a single goal</p>
   <p>GSP > 60% could indicate multiple goals for a team</p></p>
   
   </div>
@@ -1563,7 +639,7 @@ main-banner .caption {
     
     <div id="section03" class="dropdown-content">
  
-  <p class="dropdown-header"'><b>Nuel Industries</b>.<p>A software company, specifoed mainly in the creation and upgrading of softwares</p>
+  <p class="dropdown-header"><b>Nuel Industries</b>.<p>A software company, specifoed mainly in the creation and upgrading of softwares</p>
   <p>Creators of the NIT passkey sytem </p></p>
   
   </div>
@@ -1576,24 +652,20 @@ main-banner .caption {
 </div>
           
             <!-- FX of home to faq-->
-<div class="fx" style="text-align: center;  ">
     
-    <div style="display: inline-block; margin: 0 20px; " id="column1" onclick="showForm('column1-form', 'column1')"      onload="changeTextColor()">
-        <b
-        ><i class="fa fa-home" style=" "></i>
-        
-        <p>Home</p></b>
-    </div>
+    <div class="bottom-menu">
+
+<div class="menu-item active" onclick="displayContent('homeContent')">
+      <i class="fa fa-home" style=" "></i>
+</div>
+
+   <div class="menu-item" onclick="displayContent('gamesContent')">
+      <i class="fa fa-soccer-ball-o" ></i>
+  </div>
     
-    <div id="column2" onclick="showForm('column2-form', 'column2')" style="display: inline-block; margin: 0 20px;">
-        <b><i class="fa fa-lightbulb-o" ></i>
-        <p>Games</p></b>
-    </div>
-    
-    <div id="column3" onclick="showForm('column3-form', 'column2')" style="display: inline-block; margin: 0 20px;">
-        <b href="Faq.html"><i class="fa fa-question" ></i>
-        <p>FAQ</p></b>
-    </div>
+  <div class="menu-item" onclick="displayContent('profileContent')">
+    <i class="fa fa-user" ></i>
+ </div>
 </div>
 
 
@@ -1602,18 +674,7 @@ main-banner .caption {
 
             
          <!-- Overlay with terms and conditions -->
-<div class="cookie-container">
-  <div class="termsBox">
-    <h1>Welcome to SafeGoals</h1>
-    <!-- Your terms and conditions content here -->
-    
-        <p>By clicking "I Agree" You consent to have read the <a href="terms.html">Terms and conditions</a> and are in concordance with its rules</p>
-        
-        <button class="cookie-btn"">I Agree</button>
-        
-  </div>
-  
-</div>
+
            
             
             
@@ -1634,8 +695,96 @@ main-banner .caption {
               
                  
         
-  <script src='Safe.js'>
+  <script >
+
+
+
+
+
+
+      function displayContent(contentId) {
+    // Hide all content sections
+    var contents = document.querySelectorAll('.content');
+    contents.forEach(function(content) {
+      content.classList.remove('active');
+    });
+
+    // Remove 'active' class from all menu items
+    var menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(function(item) {
+      item.classList.remove('active');
+    });
+
+    // Display the selected content and set the corresponding menu item as active
+    document.getElementById(contentId).classList.add('active');
+    document.querySelector('[onclick="displayContent(\'' + contentId + '\')"]').classList.add('active');
+  }
+
+  // Display home content by default
+  window.onload = function() {
+    displayContent('homeContent');
+    
+    
+    
+    
   
+    
+  };
+  
+   function toggleDropdown(sectionId) {
+      var dropdownContent = document.getElementById(sectionId);
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    }
+    
+    
+  
+
+
+
+
+
+
+
+  //sllder
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Hide all slides
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  // Reset all dots
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  
+  // Increment slideIndex
+  slideIndex++;
+
+  // Reset slideIndex if it exceeds the number of slides
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  
+  // Display current slide and dot
+  slides[slideIndex - 1].style.display = "block";  
+  dots[slideIndex - 1].classList.add("active");
+  
+  // Change slide every 2 seconds
+  setTimeout(showSlides, 4000);
+}
+
+function currentSlide(n) {
+  slideIndex = n;
+  showSlides();
+}
      </script>
 
 </body>
