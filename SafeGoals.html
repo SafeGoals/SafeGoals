@@ -12,14 +12,12 @@
   <style>
   
   body {
-    background:linear-gradient(to bottom, white, lightgreen,grey, black) ;
+    background:#555;
     color:grey;
     font-size:8px;
     margin:0;
 }
-   .fa fa-telegram{
-    color:white;
-   }
+   
   #myInput{
     height:6px;
     border-radius:25px;
@@ -82,14 +80,19 @@ img {
      }
    
 #H{
-    background-color:lightgreen;
+    background-color:lightgrey;
 }
 #A{
-    background-color:lightgreen;
+    background-color:lightgrey;
 }
 
 #gamesContent{
-  background:linear-gradient(to bottom, white, lightgreen,grey, black) ;
+  background-color:black;
+}
+#gamesContent .home{
+  color: #ffff;
+  padding: 10px;
+  cursor: pointer;
 }
 
 table {
@@ -99,7 +102,6 @@ clear:both;
     }
 
     table th {
-        background-color:;
         color: black;
         padding: 10px;
         
@@ -107,7 +109,7 @@ clear:both;
     td{
     
     color:white;
-    background:grey;
+    background:#333;
         padding:20px;
         text-align:center;
         padding:12px;
@@ -159,7 +161,7 @@ footer{
     width:100%;
     bottom:0;
     left:0;
-    background-color:#3333;
+    background-color:#555;
     
 }
 .fut{
@@ -174,7 +176,11 @@ footer p{
     justify-content:center;
     padding-top:28px;
     font-size:14px;
-    color:black;
+    color:lightgrey;
+
+}
+footer a{
+    color: lightgreen;
 }
 .futf{
 float:right ;
@@ -187,8 +193,9 @@ padding-top:8px;
     
 }
 .mainlinks a{
-    color:green;
+    color:white;
 }
+
 #faq p{
     text-decoration:underline ;
     padding:5px;
@@ -388,7 +395,7 @@ main-banner .caption {
   margin-bottom: 30px;
   font-size: 40px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 800px;
   color: #fff;
   letter-spacing: 1px;
 }
@@ -450,9 +457,12 @@ main-banner .caption {
   .content.active {
     display: block;
   }
-
+.talkk{
+    background:black;
+    padding:10px;
+}
 .talkk p{
-  color: black;
+  color: white;
   font-size: 30px;
   padding: 10px;
   margin: 10px;
@@ -466,41 +476,43 @@ main-banner .caption {
 .talkk li{
     padding: 10px;
   margin: 10px;
-  color: black;
+  color: white;
 font-size: 14px;
 }
 
-
+.vail{
+color: black;
+}
 
   </style>
 
 </head>
-<body onload=" showForm('column1-form', 'column1')">
+<body onload=" showForm('column1-form', 'column1'),">
 
 <div class="content" id="homeContent">
 
 
 <div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>  <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b></div>
 
-<div class="slideshow-container">
-  <div class="slide">
-    <img src="reg.png" alt="Slide 1">
-  </div>
-  <div class="slide">
-    <img src="cut.png" alt="Slide 2">
-  </div>
-  <div class="slide">
-    <img src="reg.png" alt="Slide 3">
-  </div>
-
-  <div class="dots">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>
-</div>
 
   
+<div class="slideshow-container" onload="showSlides()">
+    <!-- Your slideshow content here -->
+    <div class="slide">
+      <img src="cut1.png" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="n2.jpg" alt="Slide 2">
+    </div>
+    <!-- Add more slides as needed -->
+
+    <!-- Add dots for navigation -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <!-- Add more dots as needed -->
+    </div>
+  </div>
 
 
 
@@ -518,7 +530,7 @@ font-size: 14px;
 
 <div class="card">
 
-<img src="kdb.jpg" alt="Card Image">
+<img src="cut1.png" alt="Card Image">
 <div class="card-content">
     <h3 class="card-title" id="head" >Avoid random picks
        
@@ -533,7 +545,7 @@ font-size: 14px;
 </div>
 
           <div class="card">
-    <img src="lift.jpg" alt="Card Image "/>
+    <img src="n2.png" alt="Card Image "/>
           <div class="card-content">
           
           <h3 class="card-title" id="head" >SafeGames are Best   
@@ -600,52 +612,19 @@ font-size: 14px;
           
             <div class="content" id="profileContent">
           
-<div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>   <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">Get passkey</a></b> </div>
+<div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>   <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">log out</a></b> </div>
 
 
-<div class="card" id="faq">
-<img src="faq1.jpeg" alt="Card Image">
-<h3 class="card-title" id="head" >Frequently Asked Questions</h3>
-<div class="card-content">
-    
-    <p class="card-description" onclick="toggleDropdown('section0')">Is SafeGoal legit?</p>
+<div class="containr">
+        <div class="profile-info">
+            <img src="cut.png" alt="Profile Image" class="profile-image">
+            <h1 class="profile-name">User Name</h1>
+        </div>
+        <p class="status">Status: [Active/Pending/Expired]</p>
+        <a href="#" class="button">Subscribe Now</a><br>
+        <a href="#" class="link">Customer Service</a>
+        <a href="#" class="link">How to Use</a>
     </div>
-    
-    <div id="section0" class="dropdown-content">
- 
-  <p class="dropdown-header">Safegoal uses an algorithm that predicts a teams scoring probality expressed in terms of percentage. it is only 97% accurate if you properly follow the figures<p>This therefore serves as a guide in placing bets on goals</p>
-  </p>
-  
-  </div>
-  
-  
-  <!-- start-->
-  <div class="card-content">
-  <p class="card-description" onclick="toggleDropdown('section02')">How to use?.</p>
-    </div>
-    
-    <div id="section02" class="dropdown-content">
- 
-  <p class="dropdown-header">Each team has a gsp, place your bets base on which team has a higher one if you plan to bet one just a teams' goal.<p>GSp > 50% but less than 60% could indicate a single goal</p>
-  <p>GSP > 60% could indicate multiple goals for a team</p></p>
-  
-  </div>
-  <!-- end-->
-  
-  <!-- start-->
-  <div class="card-content">
-  <p class="card-description" onclick="toggleDropdown('section03')">Who owns SafeGoal?.</p>
-    </div>
-    
-    <div id="section03" class="dropdown-content">
- 
-  <p class="dropdown-header"><b>Nuel Industries</b>.<p>A software company, specifoed mainly in the creation and upgrading of softwares</p>
-  <p>Creators of the NIT passkey sytem </p></p>
-  
-  </div>
-  <!-- end-->
-  
-</div>
 
 
 
@@ -683,12 +662,15 @@ font-size: 14px;
      <footer>
     
           <div class="fut"> <b>H/A</b> <div class="futf"> © 2024 SafeGoals All rights reserved </div></div>
-        <p>Age 18 and above only to use SafeGoal. Play Responsibly. Betting is addictive and can be psychologically harmful.</p>
-        
+        <p>Age 18 and above are only to use SafeGoal. Play Responsibly. Betting is addictive and can be psychologically harmful.</p>
+        <p>Built by <a href="#">L.E.V.I</a> </p>
         <div class="mainlinks">
             <a href="#">Terms & Conditions</a> | <a href="About.html">About us</a>
+
         </div>
-     </footer>  
+        
+     </footer> 
+
             
             
             
