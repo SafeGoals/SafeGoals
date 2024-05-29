@@ -424,7 +424,59 @@ main-banner .caption {
 
 }
 
+/*profile*/
 
+        
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .profile-info {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .profile-info h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+        .profile-content {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #888;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: green;
+        }
+        .container a{
+            color:pink;
+        }
+    
+    
+    
 
    
         /* Optional: Add additional styling for content overlay */
@@ -525,9 +577,9 @@ color: black;
  <section class="talkk">
    <p>Your football guide to Winning</p>
 
-   <h2>Today's Specials</h2>
+   <h2>Today's Specials </h2> 
 <ul>
-  <li>Liverpool vs Man Utd</li>
+  <li>🔥Liverpool vs Man Utd</li>
 </ul>
  </section>
 
@@ -620,15 +672,30 @@ color: black;
 <div class="safe"> <b class="h1">Safe<strong>Goals</strong>⚽</b>   <b class="side"><a href="https://wa.me/+2348035527091?text=Hello%20I%20would%20love %20a%20passkey%20for%20SafeGoals">log out</a></b> </div>
 
 
-<div class="containr">
-        <div class="profile-info">
-            <img src="cut.png" alt="Profile Image" class="profile-image">
-            <h1 class="profile-name">User Name</h1>
+<div class="container">
+        <div class="profile-header">
+            <img src="path/to/profile-image.jpg" alt="Profile Image" class="profile-image">
+            <div class="profile-info">
+                <h2>John Doe</h2>
+                <p>Email: johndoe@example.com</p>
+                <p>Member since: January 2022</p>
+                <button class="btn" onclick="document.getElementById('changeImageModal').style.display='block'">Change Image</button>
+            </div>
         </div>
-        <p class="status">Status: [Active/Pending/Expired]</p>
-        <a href="#" class="button">Subscribe Now</a><br>
-        <a href="#" class="link">Customer Service</a>
-        <a href="#" class="link">How to Use</a>
+        <div class="profile-content">
+            <h3>About Me</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel dolor eget quam elementum tempor. Suspendisse potenti.</p>
+
+            <h3>Recent Activity</h3>
+            <ul>
+                <li>Posted a new blog article: <a href="#">My Journey with PHP</a></li>
+                <li>Commented on <a href="#">Understanding MVC Architecture</a></li>
+                <li>Liked the post <a href="#">10 Tips for Better Coding</a></li>
+            </ul>
+
+            <h3>Settings</h3>
+            <p><a href="#">Edit Profile</a> | <a href="#">Change Password</a> | <a href="#">Logout</a></p>
+        </div>
     </div>
 
 
